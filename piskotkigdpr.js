@@ -107,7 +107,7 @@ var piskotkiGDPR = {
 
 
 /* HTML okno za piškotke */
-piskotkiGDPR.okno.innerHTML = '<p><a class="icon" href="https://piskotki-gdpr.pakt.si/"><img src="https://piskotki-gdpr.pakt.si/favicon.ico"></a><h1>' + piskotkiGDPR.naslov + '</h1></p>' + '<p>' + piskotkiGDPR.besediloEna + '</p>' + '<p>' + piskotkiGDPR.besediloDva + '</p>' + '<p><a href="' + piskotkiGDPR.povezavaPogoji + '">' + piskotkiGDPR.imePovezavePogoji + '</a></p>' + '<p><a href="#" class="btn">' + piskotkiGDPR.besediloGumba + '</a></p>';
+piskotkiGDPR.okno.innerHTML = '<p><a class="icon" href="https://piskotki-gdpr.pakt.si/"><img src="https://raw.githubusercontent.com/agencija-pakt/piskotki-gdpr/master/favicon.ico"></a><h1>' + piskotkiGDPR.naslov + '</h1></p>' + '<p>' + piskotkiGDPR.besediloEna + '</p>' + '<p>' + piskotkiGDPR.besediloDva + '</p>' + '<p><a href="' + piskotkiGDPR.povezavaPogoji + '">' + piskotkiGDPR.imePovezavePogoji + '</a></p>' + '<p><a href="#" class="btn">' + piskotkiGDPR.besediloGumba + '</a></p>';
 piskotkiGDPR.okno.setAttribute('id', 'piskotki');
 if (piskotkiGDPR.animacija === true) {
   piskotkiGDPR.okno.setAttribute('class', 'bounce');
