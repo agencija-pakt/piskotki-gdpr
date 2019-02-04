@@ -1,4 +1,4 @@
-#Puskotki GDPR
+#Piškotki GDPR
 
 Končno! Celovita rešitev piškotkov za spletne strani (pripravljeno po smernicah GDPR uredbe).
 
