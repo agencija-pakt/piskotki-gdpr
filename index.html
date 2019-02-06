@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+
+    <!-- Kopirajte naslednji dve vrstici na svojo stran med <head> ... </head> oznake -->
+    <script src="piskotkigdpr-min.js"></script>
+    <link rel="stylesheet" type="text/css" href="piskotkigdpr-min.css">
+
+
+    <!-- Če boste skripte zaganjali iz mape, dodajte v vrstice še pod do mape npr.
+    <script src="js/piskotkigdpr.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/piskotkigdpr.min.css">
+    -->
+
+    <title>Ime strani</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    /* Nastavitve vtičnika piskotkiGDPR */
+    piskotkiGDPR({
+        sencaOkna             : '0 10px 20px 0 rgba(0, 0, 0, 0.15)',
+        barvaOzadja           : 'rgba(0,0,0,.8)',
+        animacija             : true,
+
+        imeStrani             : 'Ta spletna stran',
+        trajanjePiskotka      : 30, // V dnevih
+
+        barvaPisave           : 'white',
+        velikostPisave        : '14px',
+
+        naslov                : 'Spletno mesto uporablja piškotke.',
+        barvaNaslova          : 'white',
+        velikostNaslova       : '16px',
+
+        besediloEna           : 'Z njimi zagotavljamo spletno storitev, analizo uporabe, oglasnih sistemov in funkcionalnosti, ki jih brez piškotkov ne bi mogli nuditi.',
+        besediloDva           : 'Z nadaljnjo uporabo spletnega mesta soglašate s piškotki.',
+
+        barvaPovezave         : 'white',
+        imePovezavePogoji     : 'Več o možnih nastavitvah piškotkov.',
+        povezavaPogoji        : '/piskotki/',
+        velikostPovezave      : '14px',
+
+        besediloGumba         : 'V redu',
+        barvaGumba            : '#1be195',
+        barvaGumbaPovezave    : 'white',
+        velikostGumbaPovezave : '16px',
+        zaobljenostGumba      : '0',
+        });
+</script>

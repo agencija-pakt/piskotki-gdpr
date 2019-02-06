@@ -10,56 +10,22 @@
   Licenca MIT
 */
 
+
 /* Piskotki GDPR */
-var piskotkiGDPR = {
-
-  /* -------------------- NASTAVITVE -------------------- */
-
-
-  sencaOkna             : '0 10px 20px 0 rgba(0, 0, 0, 0.15)',
-  barvaOzadja           : 'rgba(0,0,0,.8)',
-  animacija             : true,
-
-  imeStrani             : 'Ta spletna stran',
-  trajanjePiskotka      : 30, // V dnevih
-
-  barvaPisave           : 'white',
-  velikostPisave        : '14px',
-
-  naslov                : 'Spletno mesto uporablja piškotke.',
-  barvaNaslova          : 'white',
-  velikostNaslova       : '16px',
-
-  besediloEna           : 'Z njimi zagotavljamo spletno storitev, analizo uporabe, oglasnih sistemov in funkcionalnosti, ki jih brez piškotkov ne bi mogli nuditi.',
-  besediloDva           : 'Z nadaljnjo uporabo spletnega mesta soglašate s piškotki.',
-
-  barvaPovezave         : 'white',
-  imePovezavePogoji     : 'Več o možnih nastavitvah piškotkov.',
-  povezavaPogoji        : '/piskotki/',
-  velikostPovezave      : '14px',
-
-  besediloGumba         : 'V redu',
-  barvaGumba            : '#1be195',
-  barvaGumbaPovezave    : 'white',
-  velikostGumbaPovezave : '16px',
-  zaobljenostGumba      : '0',
-
-  
-
-  /* -------------------- NE UREJAJ NAPREJ --------------------
-
+function piskotkiGDPR(_pi) {
 
   /* Pridobitev domene strani iz URL naslova */
-  domenaStrani: function() {
+  _pi.domenaStrani = function() {
     if (window.location.hostname !== '') {
       return window.location.hostname;
     } else {
-      return piskotkiGDPR.imeStrani;
+      return _pi.imeStrani;
     }
-  },
+  };
+
 
   /* Pridobitev piškotov in vrnitev rezultata vsebine piškotkov, če vsebine ni podamo prazno vsebino */
-	pridobi: function(ime) {
+  _pi.pridobi = function(ime) {
 		if (document.cookie.length > 0) {
 			var zacetek = document.cookie.indexOf(ime + '=');
 			if (zacetek != -1) {
@@ -72,181 +38,192 @@ var piskotkiGDPR = {
 			}
 		}
 		return '';
-	},
- 
+	};
+
+
   /* Nastavitev piškota glede na ('ime piškotka', 'vsebina piškotka', 'čas trajanja piškotka - glede na dan') */
-	nastavi: function(ime, vsebina, cas) {
+  _pi.nastavi = function(ime, vsebina, cas) {
 		var datumPoteka = new Date();
 		datumPoteka.setDate(datumPoteka.setDate() + cas);
     document.cookie = ime + '=' + escape(vsebina) + ((cas == null) ? '' : '; expires=' + datumPoteka.toUTCString()) + '; path=/;';
-  },
-  
-	izbrisi: function(ime) {
-    document.cookie = ime + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-    document.cookie = ime + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;domain=.'+ piskotkiGDPR.domenaStrani().replace(/\s/g, '') +';';
-	},
+  };
  
+  
+  /* Izbriši piškot */
+	_pi.izbrisi = function(ime) {
+    document.cookie = ime + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+    document.cookie = ime + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;domain=.'+ _pi.domenaStrani().replace(/\s/g, '') +';';
+	};
+ 
+  
   /* Če piškot obstaja, vrnemo "true" ali "false" */
-	preglej: function(ime) {
-		ime = piskotkiGDPR.pridobi(ime);
+	_pi.preglej = function(ime) {
+		ime = _pi.pridobi(ime);
 		if (ime != null && ime != '') {
 			return true;
 		} else {
 			return false;
 		}
-  },
+  };
   
-  /* Potrditveno polje (checkboxes) */
-  accepted: document.getElementById('accepted'),
-  social: document.getElementById('social'),
-  remarketing: document.getElementById('remarketing'),
 
-  /* HTML okno za piškotke */
-  okno: document.createElement('div')
-};
+  /* Izvedi vtičnik šele, ko je coloten dokument pripravljen */
+  document.addEventListener('DOMContentLoaded', function() {
 
+    /* Potrditveno polje (checkboxes) */
+    _pi.accepted = document.getElementById('accepted');
+    _pi.social = document.getElementById('social');
+    _pi.remarketing = document.getElementById('remarketing');
 
-/* HTML okno za piškotke */
-piskotkiGDPR.okno.innerHTML = '<p><a class="icon" href="https://piskotki-gdpr.pakt.si/"><img src="https://raw.githubusercontent.com/agencija-pakt/piskotki-gdpr/master/favicon.ico" alt="piskotki gdpr skripta"></a><h1>' + piskotkiGDPR.naslov + '</h1></p>' + '<p>' + piskotkiGDPR.besediloEna + '</p>' + '<p>' + piskotkiGDPR.besediloDva + '</p>' + '<p><a href="' + piskotkiGDPR.povezavaPogoji + '">' + piskotkiGDPR.imePovezavePogoji + '</a></p>' + '<p><a href="#" class="btn">' + piskotkiGDPR.besediloGumba + '</a></p>';
-piskotkiGDPR.okno.setAttribute('id', 'piskotki');
-if (piskotkiGDPR.animacija === true) {
-  piskotkiGDPR.okno.setAttribute('class', 'bounce');
-}
-document.body.appendChild(piskotkiGDPR.okno);
-
-/* Odstranitev animacije (bounce) */
-setTimeout(function() {
-  piskotkiGDPR.okno.classList.remove('bounce');
-}, 12000);
+    /* HTML okno za piškotke */
+    _pi.okno = document.createElement('div');
 
 
-/* Piškot - cookie-notice-accepted */
-document.querySelector("#piskotki .btn").addEventListener('click', function(e) {
-  e.preventDefault();
-  piskotkiGDPR.nastavi('cookie-notice-accepted', 'true', piskotkiGDPR.trajanjePiskotka);
-  piskotkiGDPR.nastavi('opt-in-social', 'true', piskotkiGDPR.trajanjePiskotka);
-  piskotkiGDPR.nastavi('opt-in-remarketing', 'true', piskotkiGDPR.trajanjePiskotka);
-  document.querySelector('#piskotki').style.display = 'none';
-
-  /* Osvežitev spletne strani */
-  setTimeout(function () {
-    location.reload();
-  }, 100);
-});
+    /* HTML okno za piškotke */
+    _pi.okno.innerHTML = '<p><a class="icon" href="https://piskotki-gdpr.pakt.si/"><img src="https://raw.githubusercontent.com/agencija-pakt/piskotki-gdpr/master/favicon.ico" alt="piskotki gdpr skripta"></a><h1>' + _pi.naslov + '</h1></p>' + '<p>' + _pi.besediloEna + '</p>' + '<p>' + _pi.besediloDva + '</p>' + '<p><a href="' + _pi.povezavaPogoji + '">' + _pi.imePovezavePogoji + '</a></p>' + '<p><a href="#" class="btn">' + _pi.besediloGumba + '</a></p>';
+    _pi.okno.setAttribute('id', 'piskotki');
+    if (_pi.animacija === true) {
+      _pi.okno.setAttribute('class', 'bounce');
+    }
+    document.body.appendChild(_pi.okno);
 
 
-/* Piškot - opt-in-social */
-if (piskotkiGDPR.social) {
-  if (piskotkiGDPR.social.addEventListener) {
-    piskotkiGDPR.social.addEventListener('change', function(event) {
-      if (event.target.checked) {
-        piskotkiGDPR.nastavi('opt-in-social', 'true', piskotkiGDPR.trajanjePiskotka);
-      } else {
-        piskotkiGDPR.izbrisi('opt-in-social');
-        piskotkiGDPR.izbrisi('VISITOR_INFO1_LIVE');
-        piskotkiGDPR.izbrisi('LOGIN_INFO');
-        piskotkiGDPR.izbrisi('YSC');
-        piskotkiGDPR.izbrisi('GPS');
-        piskotkiGDPR.izbrisi('xs');
-        piskotkiGDPR.izbrisi('act');
-        piskotkiGDPR.izbrisi('c_user');
-        piskotkiGDPR.izbrisi('datr');
-        piskotkiGDPR.izbrisi('dpr');
-        piskotkiGDPR.izbrisi('pl');
-        piskotkiGDPR.izbrisi('sb');
-        piskotkiGDPR.izbrisi('wd');
-        piskotkiGDPR.izbrisi('fr');
-        piskotkiGDPR.izbrisi('presense');
-        piskotkiGDPR.izbrisi('SID');
-        piskotkiGDPR.izbrisi('OGPC');
+    /* Odstranitev animacije (bounce) */
+    setTimeout(function() {
+      _pi.okno.classList.remove('bounce');
+    }, 12000);
+
+
+    /* Piškot - cookie-notice-accepted */
+    document.querySelector("#piskotki .btn").addEventListener('click', function(e) {
+      e.preventDefault();
+      _pi.nastavi('cookie-notice-accepted', 'true', _pi.trajanjePiskotka);
+      _pi.nastavi('opt-in-social', 'true', _pi.trajanjePiskotka);
+      _pi.nastavi('opt-in-remarketing', 'true', _pi.trajanjePiskotka);
+      document.querySelector('#piskotki').style.display = 'none';
+
+      /* Osvežitev spletne strani */
+      setTimeout(function () {
+        location.reload();
+      }, 100);
+    });
+
+
+    /* Piškot - opt-in-social */
+    if (_pi.social) {
+      if (_pi.social.addEventListener) {
+        _pi.social.addEventListener('change', function(event) {
+          if (event.target.checked) {
+            _pi.nastavi('opt-in-social', 'true', _pi.trajanjePiskotka);
+          } else {
+            _pi.izbrisi('opt-in-social');
+            _pi.izbrisi('VISITOR_INFO1_LIVE');
+            _pi.izbrisi('LOGIN_INFO');
+            _pi.izbrisi('YSC');
+            _pi.izbrisi('GPS');
+            _pi.izbrisi('xs');
+            _pi.izbrisi('act');
+            _pi.izbrisi('c_user');
+            _pi.izbrisi('datr');
+            _pi.izbrisi('dpr');
+            _pi.izbrisi('pl');
+            _pi.izbrisi('sb');
+            _pi.izbrisi('wd');
+            _pi.izbrisi('fr');
+            _pi.izbrisi('presense');
+            _pi.izbrisi('SID');
+            _pi.izbrisi('OGPC');
+          }
+        }, false);
       }
-    }, false);
-  }
-}
+    }
 
 
-/* Piškot - opt-in-remarketing */
-if (piskotkiGDPR.remarketing) {
-  if (piskotkiGDPR.remarketing.addEventListener) {
-    piskotkiGDPR.remarketing.addEventListener('change', function(event) {
-      if (event.target.checked) {
-        piskotkiGDPR.nastavi('opt-in-remarketing', 'true', piskotkiGDPR.trajanjePiskotka);
-      } else {
-        piskotkiGDPR.izbrisi('opt-in-remarketing');
-        piskotkiGDPR.izbrisi('NID');
-        piskotkiGDPR.izbrisi('IDE');
-        piskotkiGDPR.izbrisi('DSID');
-        piskotkiGDPR.izbrisi('1P_JAR');
-        piskotkiGDPR.izbrisi('APISID');
-        piskotkiGDPR.izbrisi('HSID');
-        piskotkiGDPR.izbrisi('SAPISID');
-        piskotkiGDPR.izbrisi('SIDCC');
-        piskotkiGDPR.izbrisi('SSID');
-        piskotkiGDPR.izbrisi('CONSENT');
-        piskotkiGDPR.izbrisi('DV');
-        piskotkiGDPR.izbrisi('PREF');
-        piskotkiGDPR.izbrisi('test_cookie');
+    /* Piškot - opt-in-remarketing */
+    if (_pi.remarketing) {
+      if (_pi.remarketing.addEventListener) {
+        _pi.remarketing.addEventListener('change', function(event) {
+          if (event.target.checked) {
+            _pi.nastavi('opt-in-remarketing', 'true', _pi.trajanjePiskotka);
+          } else {
+            _pi.izbrisi('opt-in-remarketing');
+            _pi.izbrisi('NID');
+            _pi.izbrisi('IDE');
+            _pi.izbrisi('DSID');
+            _pi.izbrisi('1P_JAR');
+            _pi.izbrisi('APISID');
+            _pi.izbrisi('HSID');
+            _pi.izbrisi('SAPISID');
+            _pi.izbrisi('SIDCC');
+            _pi.izbrisi('SSID');
+            _pi.izbrisi('CONSENT');
+            _pi.izbrisi('DV');
+            _pi.izbrisi('PREF');
+            _pi.izbrisi('test_cookie');
+          }
+        }, false);
       }
-    }, false);
-  }
-}
+    }
 
 
-/* Če piškot "cookie-notice-accepted" ni nastavljen, prikažemo okno */
-if (piskotkiGDPR.preglej('cookie-notice-accepted') !== true) {
-  document.querySelector('#piskotki').style.display = 'block';
-}
+    /* Če piškot "cookie-notice-accepted" ni nastavljen, prikažemo okno */
+    if (_pi.preglej('cookie-notice-accepted') !== true) {
+      document.querySelector('#piskotki').style.display = 'block';
+    }
 
 
-/* Nastavitve piškotkov (checkboxes) */
-if (piskotkiGDPR.accepted) {
-  if (piskotkiGDPR.preglej('cookie-notice-accepted') === true) {
-    piskotkiGDPR.accepted.checked = true;
-  }
-}
+    /* _pi piškotkov (checkboxes) */
+    if (_pi.accepted) {
+      if (_pi.preglej('cookie-notice-accepted') === true) {
+        _pi.accepted.checked = true;
+      }
+    }
 
-if (piskotkiGDPR.social) {
-  if (piskotkiGDPR.preglej('opt-in-social') === true) {
-    piskotkiGDPR.social.checked = true;
-  }
-}
+    if (_pi.social) {
+      if (_pi.preglej('opt-in-social') === true) {
+        _pi.social.checked = true;
+      }
+    }
 
-if (piskotkiGDPR.remarketing) {
-  if (piskotkiGDPR.preglej('opt-in-remarketing') === true) {
-    piskotkiGDPR.remarketing.checked = true;
-  }
-}
-
-
-/* Osnovno oblikovanje */
-document.getElementById('piskotki').style.background = piskotkiGDPR.barvaOzadja;
-document.getElementById('piskotki').style.boxShadow = piskotkiGDPR.sencaOkna;
-
-/* Oblikovanje naslova */
-document.querySelector('#piskotki h1').style.cssText = 'color: ' + piskotkiGDPR.barvaNaslova + '; font-size: ' + piskotkiGDPR.velikostNaslova + ';';
-
-/* Oblikovanje pisave */
-var piskotkiGDPRp = document.querySelectorAll('#piskotki p');
-var i;
-for (i = 0; i < piskotkiGDPRp.length; i++) {
-  piskotkiGDPRp[i].style.cssText = 'color: ' + piskotkiGDPR.barvaPisave + '; font-size: ' + piskotkiGDPR.velikostPisave + ';';
-}
-
-/* Oblikovanje povezave */
-var piskotkiGDPRa = document.querySelectorAll('#piskotki a');
-var i;
-for (i = 0; i < piskotkiGDPRa.length; i++) {
-  piskotkiGDPRa[i].style.cssText = 'color: ' + piskotkiGDPR.barvaPovezave + '; font-size: ' + piskotkiGDPR.velikostPovezave + ';';
-}
-
-/* Oblikovanje gumba */
-document.querySelector('#piskotki .btn').style.cssText = 'background: ' + piskotkiGDPR.barvaGumba + '; color:' + piskotkiGDPR.barvaGumbaPovezave + '; border-radius: ' + piskotkiGDPR.zaobljenostGumba + '; font-size: ' + piskotkiGDPR.velikostGumbaPovezave + ';';
+    if (_pi.remarketing) {
+      if (_pi.preglej('opt-in-remarketing') === true) {
+        _pi.remarketing.checked = true;
+      }
+    }
 
 
-/* Avtomatska sprememba pogojev z imenom strani */
-piskotkiGDPRimeStrani = document.querySelectorAll('.ime-strani');
-var i;
-for (i = 0; i < piskotkiGDPRimeStrani.length; i++) {
-  piskotkiGDPRimeStrani[i].innerHTML = piskotkiGDPR.domenaStrani();
-  piskotkiGDPRimeStrani[i].style.cssText = 'font-weight: bold;';
-}
+    /* Osnovno oblikovanje */
+    document.getElementById('piskotki').style.background = _pi.barvaOzadja;
+    document.getElementById('piskotki').style.boxShadow = _pi.sencaOkna;
+
+    /* Oblikovanje naslova */
+    document.querySelector('#piskotki h1').style.cssText = 'color: ' + _pi.barvaNaslova + '; font-size: ' + _pi.velikostNaslova + ';';
+
+    /* Oblikovanje pisave */
+    var _pip = document.querySelectorAll('#piskotki p');
+    var i;
+    for (i = 0; i < _pip.length; i++) {
+      _pip[i].style.cssText = 'color: ' + _pi.barvaPisave + '; font-size: ' + _pi.velikostPisave + ';';
+    }
+
+    /* Oblikovanje povezave */
+    var _pia = document.querySelectorAll('#piskotki a');
+    var i;
+    for (i = 0; i < _pia.length; i++) {
+      _pia[i].style.cssText = 'color: ' + _pi.barvaPovezave + '; font-size: ' + _pi.velikostPovezave + ';';
+    }
+
+    /* Oblikovanje gumba */
+    document.querySelector('#piskotki .btn').style.cssText = 'background: ' + _pi.barvaGumba + '; color:' + _pi.barvaGumbaPovezave + '; border-radius: ' + _pi.zaobljenostGumba + '; font-size: ' + _pi.velikostGumbaPovezave + ';';
+
+
+    /* Avtomatska sprememba pogojev z imenom strani */
+    _piimeStrani = document.querySelectorAll('.ime-strani');
+    var i;
+    for (i = 0; i < _piimeStrani.length; i++) {
+      _piimeStrani[i].innerHTML = _pi.domenaStrani();
+      _piimeStrani[i].style.cssText = 'font-weight: bold;';
+    }
+
+  }); // Pripravljen dokument
+} // Vtičnik piskotkiGDPR
