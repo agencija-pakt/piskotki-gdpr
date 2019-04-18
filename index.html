@@ -1,53 +1,527 @@
 <!DOCTYPE html>
-<html lang="si">
+<!--
+	Copyright (c) Agencija Pakt d.o.o.</strong> (vse pravice pridržane)
+
+	Dovoljenje je brezplačno podeljeno vsaki osebi, ki prejme kopijo. Ta programska oprema in povezane datoteke, je treba obravnavati brez omejitev, vključno s pravicami do neomejene uporabe, kopiranja, spreminjanja, združevanja, objavljanja, distribuiranja, licenciranja in/ali prodajanja programske opreme. Osebam, ki jim je programska oprema zagotovljena morajo upoštevati naslednje pogoje:
+		
+	Zgornje (copywrite) obvestilo in obvestilu o dovoljenju je potrebno vključiti v vse kopije programske opreme. Prav tako je obvezno pustiti vse povezave, ki vodijo do uradne spletne strani avtorja te programske opreme.
+		
+	PROGRAMSKA OPREMA JE PREDSTAVLJENA "KOT JE", BREZ KAKRŠNEGAKOLI JAMSTVA, IMPLICITNEGA ALI EKSPLICITNEGA. V NOBENEM PRIMERU AVTORJI, DOBAVITELJI IN DISTRIBUTERJI NE PREVZEMAMO NOBENE ODGOVORNOSTI O ŠKODI, IZGUBI DOBIČKA, PRIHODKOV ALI PODATKOV, FINANČNE IZGUBE IN DRUGIH ODGOVORNOSTI ALI POSREDNO, POSEBNO, POSLEDIČNO, EKSEMPLARIČNO ALI KAZNOVALNO ODŠKODNINO.
+	
+	Licenca MIT
+-->
+<html lang="sl">
 <head>
+<meta charset="UTF-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Kopirajte naslednji dve vrstici na svojo stran med <head> ... </head> oznake -->
-    <script src="piskotkigdpr-min.js"></script>
-    <link rel="stylesheet" type="text/css" href="piskotkigdpr-min.css">
+<title>Piškotki GDPR</title>
 
+<meta name="description" content="Končno! Celovita rešitev piškotkov za spletne strani (pripravljeno po smernicah GDPR uredbe).">
 
-    <!-- Če boste skripte zaganjali iz mape, dodajte v vrstice še pod do mape npr.
-    <script src="js/piskotkigdpr.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/piskotkigdpr.min.css">
-    -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-19189958-12"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-19189958-12', { 'anonymize_ip': true });
+</script>
 
-    <title>Ime strani</title>
 </head>
+
+<style type="text/css">
+	* {
+		box-sizing: border-box;
+	}
+
+	body {
+		font-family: 'Open Sans', sans-serif;
+		width: 100%;
+		max-width: 800px;
+		margin: 0 auto;
+		padding: 50px;
+	}
+
+	h2 {
+		margin-top: 80px;
+	}
+
+	hr {
+		border: none;
+		border-bottom: 1px solid #eaecef;
+    	padding-bottom: .3em;
+	}
+
+	img {
+		width: 100%;
+		max-width: 700px;
+		height: auto;
+		display: block;
+	}
+
+	section {
+		margin: 20px 0 100px;
+	}
+
+	pre {
+		background-color: #f6f8fa;
+		border-radius: 3px;
+		font-size: 85%;
+		line-height: 1.45;
+		overflow: auto;
+		padding: 15px;
+		color: #032f62;
+		font-family: Verdana, Geneva, sans-serif;
+	}
+
+	.znacke span {
+		border: 1px solid #ccc;
+		padding: 5px 10px;
+		border-radius: 5px;
+		font-size: 14px;
+		white-space: nowrap;
+		display: inline-block;
+		margin: 10px 0 0 0;
+	}
+</style>
+
 <body>
-    
+	<img style="margin: 0 auto; max-width: 570px;" src="img/piskotkigdpr.png" alt="Piškotki GDPR logo" width="570">
+
+	<hr>
+
+	<br>
+
+	<h1>PISKOTKI GDPR - SKRIPTA</h1>
+
+	<p style="font-size: 18px;"><strong>Končno! Celovita rešitev piškotkov za spletne strani (pripravljeno po smernicah GDPR uredbe).</strong></p>
+
+	<p>25. maja 2018 je začel veljati <a href="https://sl.wikipedia.org/wiki/Splo%C5%A1na_uredba_o_varstvu_podatkov" target="_blank" rel="noopener noreferrer">GDPR</a>. Zato smo v podjetju iskali <strong>napredno rešitev za piškotke</strong> na spletnih straneh za potrebe lastnih projektov. <a href="https://cookieconsent.insites.com/" target="_blank" rel="noopener noreferrer">Cookie Consent</a> je sicer super storitev in edina rešitev, ki smo jo našli, vendar zelo draga. Zato smo razvili lasten produkt, ki ga danes celotni Sloveniji ponujamo odprtokodno in brezplačno!</p>
+
+	<p>Produkt je sestavljen iz skripte (plugin) za popolno funkcionalnost piškotkov za spletne strani. Prav tako pa ponujamo predloge splošnih pogojev, kjer se besedila avtomatsko prilagodijo vašemu naslovu spletne strani. Gre za celovito, varno in najpreprostejšo rešitev na trgu.</p>
+
+	<p style="color: #1be195;"><strong>Pogoj brezplačne uporabe piskotkiGDPR je navedba povezave avtorja (<a href="https://piskotki-gdpr.pakt.si/" style="color: #1be195;">piskotkiGDPR</a>). Povezave so že dodane, tako da vam ni potrebno skrbeti, le izbrisati jih ne smete.</strong></p>
+
+	<hr>
+	<br>
+	<nav>
+		• <a href="#piskoti">Piškotki</a>
+		&nbsp • <a href="#pogoji">Pogoji</a>
+		&nbsp • <a href="#namestitev">Namestitev</a>
+		&nbsp • <a href="#nastavitve">Nastavitve</a>
+		&nbsp • <a href="#razvoj">Razvoj</a>
+		&nbsp • <a href="#licenca">Licenca</a>
+	</nav>
+	<br>
+
+	
+	
+	<br>
+
+	<!-- Paket programske opreme -->
+	<section id="paket">
+		<h2>Paket (piskotkiGDPR) vključuje:</h2>
+		<hr>
+		
+		<ul>
+			<li>Napredna skripta za piškotke,</li>
+			<li>odlična uporabniška izkušnja,</li>
+			<li>prilagojeno za vse vrste naprav,</li>
+			<li>navodila za uporabo,</li>
+			<li>prilagoditev po meri,</li>
+			<li>doživljenjske brezplačne posodobitve,</li>
+			<li>+ pripravljena avtomatizirana besedila (splošni pogoji, zasebnost, piškotki).</li>
+		</ul>
+		<br>
+		<img width="600" src="img/piskotki-na-spletni-strani.png" alt="piškotki gdpr - za spletne strani">
+	</section>
+
+	
+	<!-- Podprti brskalniki -->
+	<section id="brskalniki">
+		<h2>Podprti brskalniki</h2>
+		<hr>
+		<ul>
+			<li>Chrome (zadnji 2 verziji)</li>
+			<li>Edge (zadnji 2 verziji)</li>
+			<li>Firefox (zadnji 2 verziji)</li>
+			<li>Internet Explorer 9+</li>
+			<li>Opera (latest 2)</li>
+			<li>Safari (latest 2)</li>
+		</ul>
+
+		<p><i>To ne pomeni, da skripte piskotkiGDPR ni mogoče uporabiti v starejših brskalnikih, pomeni le da bomo zagotavljali združljivost z zgoraj navedenimi.</i></p>
+	</section>
+
+
+	<!-- Piškoti -->
+	<section id="piskoti">
+		<h2>Piškotki</h2>
+		<hr>
+		<p>Piškotke delimo na tri glavne kategorije, glede na kategorijo lahko funkcionalnosti povezane s piškotki izklopimo. <i>Npr. če se uporabnik ne strinja s piškotki družbenih omrežij, lahko glede na ime piškotka opt-in-social izklopimo dostop do YouTube posnetka.</i></p>
+
+		<br>
+
+		<h3><img style="width: 16px; display: inline;" src="img/favicon.png" width="16px" alt="piškot - osnovno delovanje"> cookie-notice-accepted</h3>
+		<p>Piškotki potrebni za osnovno delovanje strani.</p>
+
+		<br>
+
+		<h3><img style="width: 16px; display: inline;" src="img/favicon.png" width="16px" alt="piškot - družbena omrežja"> opt-in-social</h3>
+		<p>Piškotki družbenih omrežij.</p>
+
+		<br>
+
+		<h3><img style="width: 16px; display: inline;" src="img/favicon.png" width="16px" alt="piškot - ponovno trženje"> opt-in-remarketing</h3>
+		<p>Piškotki za ponovno trženje.</p>
+	</section>
+
+	<section id="pogoji">
+		<h2>Pogoji</h2>
+		<hr>
+
+		<p>Zraven skripte za vklop in izklop piškotkov na vaši strani, vam ponujamo še pametne pogoje uporabe. Pogoji se avtomatsko prilagodijo vaši spletni strani oz. imenu vaše strani.</p>
+
+		<p>Vse kar morate storiti je, da namestite piskotkigdpr.min.js <i>(glejte odsek namestitev)</i> kodo v glavo vaše strani in nato prilepite kodo pogojev <i>(splosni pogoji, zasebnost, piskotki)</i> na vašo spletno stran. <i>Ime vaše spletne strani se bo samodejno preneslo v celotno besedilo pogojev.</i></p>
+
+		<p>V pogojih: piškotki, boste našli odsek Nastavitve piškotkov, kjer lahko uporabniki naknadno spreminjajo nastavitve piškotkov.</p>
+		<nav>
+			<ul>
+				<li><a href="pogoji/splosnipogoji">Splošni pogoji</a></li>
+				<li><a href="pogoji/zasebnost">Zasebnost</a></li>
+				<li><a href="pogoji/piskotki">Piškotki</a></li>
+			</ul>
+		</nav>
+	</section>
+
+
+	<!-- Namestitev -->
+	<section id="namestitev">
+		<h2>Namestitev</h2>
+		<hr>
+		<h3>1. Prenos</h3>
+		<p>Skripto lahko prenesete → <a href="https://github.com/agencija-pakt/piskotki-gdpr/archive/master.zip" download>tukaj (zip)</a> ←</p>
+
+		<h3>2. HTML/Javascript</h3>
+		<p>Uporabite piskotkigdpr.min.js za produkcijo in piskotkigdpr.js za razvoj.</p>
+		<p>Kopirajte kodo script in style v glavo vaše strani.</p>
+		<pre>
+&lt;html&gt;
+&lt;head&gt;
+	&nbsp; &lt;script src="piskotkigdpr-min.js"&gt;&lt;/script&gt;
+	&nbsp; &lt;link rel="stylesheet" type="text/css" href="piskotkigdpr-min.css"&gt;
+&lt;/head&gt;
+...</pre>
+
+		<h3>3. Script</h3>
+		<p>Skripto poženete z naslednjim ukazom:</p>
+		<pre>
+&lt;script&gt;
+	/* Nastavitve vtičnika piskotkiGDPR */
+	piskotkiGDPR({
+		sencaOkna             : '0 10px 20px 0 rgba(0, 0, 0, 0.15)',
+		barvaOzadja           : 'rgba(0,0,0,.8)',
+		animacija             : true,
+
+		imeStrani             : 'Ta spletna stran',
+		trajanjePiskotka      : 30, // V dnevih
+
+		barvaPisave           : 'white',
+		velikostPisave        : '14px',
+
+		naslov                : 'Spletno mesto uporablja piškotke.',
+		barvaNaslova          : 'white',
+		velikostNaslova       : '16px',
+
+		besediloEna           : 'Z njimi zagotavljamo spletno storitev, analizo uporabe, oglasnih sistemov in funkcionalnosti, ki jih brez piškotkov ne bi mogli nuditi.',
+		besediloDva           : 'Z nadaljnjo uporabo spletnega mesta soglašate s piškotki.',
+
+		barvaPovezave         : 'white',
+		imePovezavePogoji     : 'Več o možnih nastavitvah piškotkov.',
+		povezavaPogoji        : '/piskotki/',
+		velikostPovezave      : '14px',
+
+		besediloGumba         : 'V redu',
+		barvaGumba            : '#1be195',
+		barvaGumbaPovezave    : 'white',
+		velikostGumbaPovezave : '16px',
+		zaobljenostGumba      : '0'
+	});
+&lt;/script&gt;
+		</pre>
+	</section>
+
+
+	<!-- Nastavitve -->
+	<section id="nastavitve">
+		<h2>Nastavitve</h2>
+		<div style="overflow-x:auto;">
+		<table>
+			<tr>
+				<th>Opcija</th>
+				<th>Vrednost</th>
+				<th>Opis</th>
+			</tr>
+			<tr>
+				<td>sencaOkna</td>
+				<td>0 10px 20px 0 rgba(0, 0, 0, 0.15)</td>
+				<td>Senca okna - prvi del pozicija, drugi del barva</td>
+			</tr>
+			<tr>
+				<td>barvaOzadja</td>
+				<td>rgba(0,0,0,.8)</td>
+				<td>Barva ozadja okna.</td>
+			</tr>
+			<tr>
+				<td>animacija</td>
+				<td>true</td>
+				<td>Animacija za večjo izpostavljenost okna (uporabite true ali false).</td>
+			</tr>
+			<tr>
+				<td>imeStrani</td>
+				<td>Spletna stran</td>
+				<td>Ime vaše strani (npr. povezava.si).</td>
+			</tr>
+			<tr>
+				<td>trajanjePiskotka</td>
+				<td>30</td>
+				<td>Trajanje zapadlosti piškotkov (v dneh).</td>
+			</tr>
+			<tr>
+				<td>barvaPisave</td>
+				<td>white</td>
+				<td>Barva besedil v oknu.</td>
+			</tr>
+			<tr>
+				<td>velikostPisave</td>
+				<td>14px</td>
+				<td>Velikost besedil v oknu.</td>
+			</tr>
+			<tr>
+				<td>naslov</td>
+				<td>Spletno mesto uporablja piškotke.</td>
+				<td>Glavni naslov v oknu piškoti.</td>
+			</tr>
+			<tr>
+				<td>barvaNaslova</td>
+				<td>white</td>
+				<td>Barva glavnega naslova.</td>
+			</tr>
+			<tr>
+				<td>velikostNaslova</td>
+				<td>16px</td>
+				<td>Velikost glavnega naslova.</td>
+			</tr>
+			<tr>
+				<td>besediloEna</td>
+				<td>Z njimi zagotavljamo spletno storitev, analizo uporabe, oglasnih sistemov in funkcionalnosti, ki jih brez piškotkov ne bi mogli nuditi.</td>
+				<td>Prvo besedilo v oknu piškoti.</td>
+			</tr>
+			<tr>
+				<td>besediloDva</td>
+				<td>Z nadaljnjo uporabo spletnega mesta soglašate s piškotki.</td>
+				<td>Drugo besedilo v oknu piškoti.</td>
+			</tr>
+			<tr>
+				<td>barvaPovezave</td>
+				<td>white</td>
+				<td>Barva povezave, ki pelje na splošne pogoje o piškotkih.</td>
+			</tr>
+			<tr>
+				<td>imePovezavePogoji</td>
+				<td>Več o možnih nastavitvah piškotkov.</td>
+				<td>Besedilo povezave, ki pelje na splošne pogoje o piškotkih.</td>
+			</tr>
+			<tr>
+				<td>povezavaPogoji</td>
+				<td>/piskotki/</td>
+				<td>Povezava do splošnih pogojev - piškotki.</td>
+			</tr>
+			<tr>
+				<td>velikostPovezave</td>
+				<td>14px</td>
+				<td>Velikost Povezave, ki pelje na splošne pogoje o piškotkih.</td>
+			</tr>
+			<tr>
+				<td>besediloGumba</td>
+				<td>V redu</td>
+				<td>Besedilo na gumbu (se strinjam).</td>
+			</tr>
+			<tr>
+				<td>barvaGumba</td>
+				<td>#1be195</td>
+				<td>Barva gumba.</td>
+			</tr>
+			<tr>
+				<td>barvaGumbaPovezave</td>
+				<td>white</td>
+				<td>Barva besedila na gumbu.</td>
+			</tr>
+			<tr>
+				<td>velikostGumbaPovezave</td>
+				<td>16px</td>
+				<td>Velikost besedila na gumbu.</td>
+			</tr>
+			<tr>
+				<td>zaobljenostGumba</td>
+				<td>0</td>
+				<td>Zaobljenost robov na gumbu.</td>
+			</tr>
+		</table>
+		</div>
+	</section>
+
+
+	<!-- Omejevanje -->
+	<section id="omejevanje">
+			<h2>Omejevanje</h2>
+			<hr>
+			<p>Edini razlog uredbe piškotkov je, da obiskovalec omeji dostop do raznih funkcionalnosti in tako omejuje dostop do svojih podatkov. Večina skript za piškotke pokaže le obvestilo, vendar so popolnoma brez vsake funkcionalnosti (GDPR takšne prakse več ne dopušča).</p>
+
+			<p>piskotkiGDPR imajo tudi možnost omejevanja!</p>
+
+			<h3>JavaScript</h3>
+			<pre>
+if (piskotkiGDPR.preglej('opt-in-social') === true) {
+	// Prikaži vsebino
+	...
+} else {
+	// Skrij vsebino
+	...
+}</pre>
+
+			<h3>PHP</h3>
+			<pre>
+if (isset($_COOKIE['opt-in-social'])) {
+	// Prikaži vsebino
+	...
+} else {
+	// Skrij vsebino
+	...
+}</pre>
+		<p><i>Omejevanje deluje tudi preko Google Tag Managera.</i></p>
+		</section>
+
+
+	<!-- Platforme -->
+	<section id="platforme">
+		<h2>Platforme</h2>
+		<hr>
+		<p>Skripta piskotkiGDPR deluje odlično na vseh spletnih platformah. Popolna integracija tudi z Wordpress in Joomla.</p>
+		<br>
+		<img style="max-width: 137px; display: inline;" src="img/wordpress.png" alt="piškotki wordpress" width="137px">
+		<img style="max-width: 137px; display: inline;" src="img/joomla.png" alt="piškotki joomla" width="137px">
+	</section>
+
+
+	<!-- Razvoj -->
+	<section id="razvoj">
+		<h2>Razvoj</h2>
+		<hr>
+		<p><i>Trenutna verzija produkta: <strong>1.0</strong></i></p>
+		<br>
+		<h3>Github</h3>
+		<p>Pomagajte nam pri razvoju in izboljšavi produkta - <a href="https://github.com/agencija-pakt/piskotki-gdpr" target="_blank" rel="noopener noreferrer">obiščite Github</a>.</p>
+	</section>
+
+
+	<!-- Avtor -->
+	<section id="avtor">
+		<h2>Avtor</h2>
+		<hr>
+		<img style="max-width: 600px;" src="img/agencija-pakt.jpg" alt="digitalna agencija pakt">
+		<h3>Avtor programske opreme piskotkiGDPR je:</h3>
+		<p>
+			<strong>Agencija Pakt d.o.o.</strong><br>
+			Gomilšakova ulica 5, 2250 Ptuj,<br>
+			T: <a href="tel:051312344">051 312 344</a><br>
+			M: <a href="mailto:info@pakt.si">info@pakt.si</a>
+		</p>
+		<br>
+		<h3>Pomoč</h3>
+		<p>Potrebujete pomoč pri integraciji piškotkov na vaši spletni strani? Kontaktirajte nas, z veseljem vam pomagamo! - <a href="https://www.pakt.si/" target="_blank" rel="noopener noreferrer">www.pakt.si</a>.</p>
+	</section>
+
+
+	<!-- Licenca -->
+	<section id="licenca">
+		<h2>Licenca</h2>
+		<hr>
+		<p><strong>Copyright (c) Agencija Pakt d.o.o.</strong> (vse pravice pridržane)</p>
+
+		<p>Dovoljenje je brezplačno podeljeno vsaki osebi, ki prejme kopijo. Ta programska oprema in povezane datoteke, je treba obravnavati brez omejitev, vključno s pravicami do neomejene uporabe, kopiranja, spreminjanja, združevanja, objavljanja, distribuiranja, licenciranja in/ali prodajanja programske opreme. Osebam, ki jim je programska oprema zagotovljena morajo upoštevati naslednje pogoje:</p>
+			
+		<p>Zgornje (copywrite) obvestilo in obvestilu o dovoljenju je potrebno vključiti v vse kopije programske opreme. Prav tako je obvezno pustiti vse povezave, ki vodijo do uradne spletne strani avtorja te programske opreme.</p>
+			
+		<p>	PROGRAMSKA OPREMA JE PREDSTAVLJENA "KOT JE", BREZ KAKRŠNEGAKOLI JAMSTVA, IMPLICITNEGA ALI EKSPLICITNEGA. V NOBENEM PRIMERU AVTORJI, DOBAVITELJI IN DISTRIBUTERJI NE PREVZEMAMO NOBENE ODGOVORNOSTI O ŠKODI, IZGUBI DOBIČKA, PRIHODKOV ALI PODATKOV, FINANČNE IZGUBE IN DRUGIH ODGOVORNOSTI ALI POSREDNO, POSEBNO, POSLEDIČNO, EKSEMPLARIČNO ALI KAZNOVALNO ODŠKODNINO.</p>
+		
+		<p><a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener noreferrer">Licenca MIT</a></p>
+	</section>
+
+
+	<!-- Značke -->
+	<section id="znacke">
+		<h2>Značke</h2>
+		<hr>
+		<p class="znacke">
+			<span>piškotki</span>
+			<span>piškoti</span>
+			<span>piškotki skripta</span>
+			<span>piškotki wordpress</span>
+			<span>piškotki joomla</span>
+			<span>piškotki izjava</span>
+			<span>sporočilo za piškotke</span>
+			<span>piškotki na spletni strani</span>
+			<span>obvestilo o piškotkih primer</span>
+			<span>piškotki gdpr</span>
+		</p>
+	</section>
+
+	<p>2019 © Minimum.si. Vse pravice pridržane.</p>
+	<nav>
+		• <a href="pogoji/splosnipogoji">Splošni pogoji</a></li>
+		&nbsp • <a href="pogoji/zasebnost">Zasebnost</a></li>
+		&nbsp • <a href="pogoji/piskotki">Piškotki</a></li>
+	</nav>
 </body>
-</html>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="piskotkigdpr-min.css?=v1.0">
+<script src="piskotkigdpr-min.js?=v1.0"></script>
 
 <script>
-    /* Nastavitve vtičnika piskotkiGDPR */
-    piskotkiGDPR({
-        sencaOkna             : '0 10px 20px 0 rgba(0, 0, 0, 0.15)',
-        barvaOzadja           : 'rgba(0,0,0,.8)',
-        animacija             : true,
+	/* Nastavitve vtičnika piskotkiGDPR */
+	piskotkiGDPR({
+		sencaOkna             : '0 10px 20px 0 rgba(0, 0, 0, 0.15)',
+		barvaOzadja           : 'rgba(0,0,0,.8)',
+		animacija             : true,
 
-        imeStrani             : 'Ta spletna stran',
-        trajanjePiskotka      : 30, // V dnevih
+		imeStrani             : 'Ta spletna stran',
+		trajanjePiskotka      : 30,
 
-        barvaPisave           : 'white',
-        velikostPisave        : '14px',
+		barvaPisave           : 'white',
+		velikostPisave        : '14px',
 
-        naslov                : 'Spletno mesto uporablja piškotke.',
-        barvaNaslova          : 'white',
-        velikostNaslova       : '16px',
+		naslov                : 'Spletno mesto uporablja piškotke.',
+		barvaNaslova          : 'white',
+		velikostNaslova       : '16px',
 
-        besediloEna           : 'Z njimi zagotavljamo spletno storitev, analizo uporabe, oglasnih sistemov in funkcionalnosti, ki jih brez piškotkov ne bi mogli nuditi.',
-        besediloDva           : 'Z nadaljnjo uporabo spletnega mesta soglašate s piškotki.',
+		besediloEna           : 'Z njimi zagotavljamo spletno storitev, analizo uporabe, oglasnih sistemov in funkcionalnosti, ki jih brez piškotkov ne bi mogli nuditi.',
+		besediloDva           : 'Z nadaljnjo uporabo spletnega mesta soglašate s piškotki.',
 
-        barvaPovezave         : 'white',
-        imePovezavePogoji     : 'Več o možnih nastavitvah piškotkov.',
-        povezavaPogoji        : '/piskotki/',
-        velikostPovezave      : '14px',
+		barvaPovezave         : 'white',
+		imePovezavePogoji     : 'Več o možnih nastavitvah piškotkov.',
+		povezavaPogoji        : '/piskotki/',
+		velikostPovezave      : '14px',
 
-        besediloGumba         : 'V redu',
-        barvaGumba            : '#1be195',
-        barvaGumbaPovezave    : 'white',
-        velikostGumbaPovezave : '16px',
-        zaobljenostGumba      : '0',
-        });
+		besediloGumba         : 'V redu',
+		barvaGumba            : '#1be195',
+		barvaGumbaPovezave    : 'white',
+		velikostGumbaPovezave : '16px',
+		zaobljenostGumba      : '0',
+		});
 </script>
+</html>

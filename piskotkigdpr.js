@@ -38,13 +38,13 @@ function piskotkiGDPR(_pi) {
 			}
 		}
 		return '';
-	};
-
+  };
+  
 
   /* Nastavitev piškota glede na ('ime piškotka', 'vsebina piškotka', 'čas trajanja piškotka - glede na dan') */
   _pi.nastavi = function(ime, vsebina, cas) {
-		var datumPoteka = new Date();
-		datumPoteka.setDate(datumPoteka.setDate() + cas);
+    var datumPoteka = new Date();
+    datumPoteka.setDate(datumPoteka.getDate() + cas);
     document.cookie = ime + '=' + escape(vsebina) + ((cas == null) ? '' : '; expires=' + datumPoteka.toUTCString()) + '; path=/;';
   };
  
@@ -66,18 +66,17 @@ function piskotkiGDPR(_pi) {
 		}
   };
   
+  /* Potrditveno polje (checkboxes) */
+  _pi.accepted = document.getElementById('accepted');
+  _pi.social = document.getElementById('social');
+  _pi.remarketing = document.getElementById('remarketing');
+
+  /* HTML okno za piškotke */
+  _pi.okno = document.createElement('div');
+
 
   /* Izvedi vtičnik šele, ko je coloten dokument pripravljen */
   document.addEventListener('DOMContentLoaded', function() {
-
-    /* Potrditveno polje (checkboxes) */
-    _pi.accepted = document.getElementById('accepted');
-    _pi.social = document.getElementById('social');
-    _pi.remarketing = document.getElementById('remarketing');
-
-    /* HTML okno za piškotke */
-    _pi.okno = document.createElement('div');
-
 
     /* HTML okno za piškotke */
     _pi.okno.innerHTML = '<p><a class="icon" href="https://piskotki-gdpr.pakt.si/"><img src="https://raw.githubusercontent.com/agencija-pakt/piskotki-gdpr/master/favicon.ico" alt="piskotki gdpr skripta"></a><h1>' + _pi.naslov + '</h1></p>' + '<p>' + _pi.besediloEna + '</p>' + '<p>' + _pi.besediloDva + '</p>' + '<p><a href="' + _pi.povezavaPogoji + '">' + _pi.imePovezavePogoji + '</a></p>' + '<p><a href="#" class="btn">' + _pi.besediloGumba + '</a></p>';
