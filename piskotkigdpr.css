@@ -1,4 +1,4 @@
-/*
+/**
 	Copyright (c) Agencija Pakt d.o.o.</strong> (vse pravice pridržane)
 
 	Dovoljenje je brezplačno podeljeno vsaki osebi, ki prejme kopijo. Ta programska oprema in povezane datoteke, je treba obravnavati brez omejitev, vključno s pravicami do neomejene uporabe, kopiranja, spreminjanja, združevanja, objavljanja, distributiranja, licenciranja in/ali prodajanja programske opreme. Osebam, ki jim je programska oprema zagotovljena morajo upoštevati naslednje pogoje:
@@ -10,7 +10,10 @@
 	Licenca MIT
 */
 
-/* Okno za piškotke */
+
+/**
+  * Pojavno okno
+  */
 #piskotki {
   display: none;
   box-sizing: border-box;
@@ -25,7 +28,10 @@
   z-index: 999999;
 }
 
-/* Odzivno oblikovanje */
+
+/**
+  * Odzivno oblikovanje
+  */
 @media screen and (max-width: 768px) {
 	#piskotki {
     width: 100%;
@@ -36,6 +42,10 @@
   }
 }
 
+
+/**
+  * Tipografija
+  */
 #piskotki h1 {
   font-weight: 600;
   line-height: 26px;
@@ -43,7 +53,7 @@
 
 #piskotki a {
   text-decoration: underline;
-  color: white;
+  color: #fff;
   font-style: italic;
 }
 
@@ -67,32 +77,32 @@
   z-index: -99;
 }
 
-/* Animacija okna (bounce) */
+
+/**
+  * Animacija okna (bounce)
+  */
 .bounce {
-  -webkit-animation: bounce 4s infinite;
+  animation: bounce 4s infinite;
 }
 
-@-webkit-keyframes bounce {
+@keyframes bounce {
   from {
-    -webkit-transform: scale3d(1, 1, 1);
-    -ms-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
+    transform: scale3d(1,1,1);
   }
 
   50% {
-    -webkit-transform: scale3d(1.05, 1.05, 1.05);
-    -ms-transform: scale3d(1.05, 1.05, 1.05);
-    transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05,1.05,1.05);
   }
 
   to {
-    -webkit-transform: scale3d(1, 1, 1);
-    -ms-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
+    transform: scale3d(1,1,1);
   }
 }
 
-/* Odzivno oblikovanje za tabele */
+
+/**
+  * Odzivno oblikovanje - tabele
+  */
 table {
   border-collapse: collapse!important;
   height: 100%!important;
@@ -105,7 +115,7 @@ table {
 table th {
   padding: 15px;
   border: 1px solid #ccc;
-  background: white;
+  background: #fff;
   font-weight: 500;
 }
   
@@ -115,7 +125,10 @@ table td {
   border: 1px solid #ccc;
 }
 
-/* Prikaz nastavitev piškotkov (checkbox) na telefonih in tablicah */ 
+
+/**
+  * Nastavitev piškotkov - checkbox (na telefonih in tablicah)
+  */ 
 @media (max-width: 1024px) {
   input[type='checkbox'] {
     width: 15px;
@@ -124,7 +137,5 @@ table td {
     vertical-align: middle;
     margin-right: 5px;
     appearance: checkbox!important;
-    -moz-appearance: checkbox!important;
-    -webkit-appearance: checkbox!important;
   }
 }
