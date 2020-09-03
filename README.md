@@ -1,7 +1,11 @@
-# Piškotki GDPR
+## Opis
+
+![alt text](piskotki-gdpr-logo.jpg)
+
+### Piškotki GDPR
 
 Končno! Celovita rešitev piškotkov za spletne strani (pripravljeno po smernicah GDPR uredbe).
 
-## Uradna spletna stran
+### Uradna spletna stran
 
 * [Piškotki GDPR](https://piskotki-gdpr.pakt.si)
