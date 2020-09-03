@@ -1,6 +1,6 @@
 ## Opis
 
-![alt text](piskotki-gdpr-logo.jpg)
+![Piškotki GDPR](piskotki-gdpr-logo.jpg)
 
 ### Piškotki GDPR
 
