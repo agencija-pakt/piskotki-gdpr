@@ -135,7 +135,11 @@ function piskotkiGDPR(_pi) {
     nastavi('opt-in-social', 'true', _pi.trajanjePiskotka);
     nastavi('opt-in-remarketing', 'true', _pi.trajanjePiskotka);
     document.querySelector('#piskotki').style.display = 'none';
-    document.querySelector('#zavesa').style.display = 'none';
+
+    // Če je zavesa omogočena
+    if (_pi.zavesa === true) {
+      document.querySelector('#zavesa').style.display = 'none';
+    }
 
     // Osvežitev spletne strani
     setTimeout(function () {

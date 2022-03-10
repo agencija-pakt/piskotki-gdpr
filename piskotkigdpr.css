@@ -31,8 +31,6 @@
   */
 #piskotki {
   display: none;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   -webkit-transform: none;
           transform: none;
   position: fixed;
@@ -41,6 +39,16 @@
   -webkit-backdrop-filter: blur(20px);
           backdrop-filter: blur(20px);
   text-align: center;
+}
+#piskotki * {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 #piskotki.zgoraj-levo {
   width: 350px;
@@ -187,6 +195,7 @@
 #piskotki p {
   font-weight: 400;
   line-height: 25px;
+  margin: 14px 0;
 }
 #piskotki p strong {
   font-weight: bolder;
