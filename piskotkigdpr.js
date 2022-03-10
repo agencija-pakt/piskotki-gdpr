@@ -214,7 +214,9 @@ function piskotkiGDPR(_pi) {
     */
   if (preglej('cookie-notice-accepted') !== true) {
     document.querySelector('#piskotki').style.display = 'block';
-    if (_pi.zavesa) {
+    
+    // Če je zavesa omogočena
+    if (_pi.zavesa === true) {
       document.querySelector('#zavesa').style.display = 'block';
     }
   }
@@ -249,7 +251,8 @@ function piskotkiGDPR(_pi) {
   document.getElementById('piskotki').style.boxShadow = _pi.sencaOkna;
   document.getElementById('piskotki').style.borderRadius = _pi.zaobljenostOkna;
 
-  if (_pi.zavesa) {
+  // Če je zavesa omogočena
+  if (_pi.zavesa === true) {
     document.getElementById('zavesa').style.background = _pi.barvaZavese;
   }
 
