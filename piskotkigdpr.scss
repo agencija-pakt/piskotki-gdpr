@@ -1,0 +1,289 @@
+/**
+	Copyright (c) Agencija Pakt d.o.o.</strong> (vse pravice pridržane)
+
+	Dovoljenje je brezplačno podeljeno vsaki osebi, ki prejme kopijo. Ta programska oprema in povezane datoteke, je treba obravnavati brez omejitev, vključno s pravicami do neomejene uporabe, kopiranja, spreminjanja, združevanja, objavljanja, distributiranja, licenciranja in/ali prodajanja programske opreme. Osebam, ki jim je programska oprema zagotovljena morajo upoštevati naslednje pogoje:
+		
+	Zgornje (copywrite) obvestilo in obvestilu o dovoljenju je potrebno vključiti v vse kopije programske opreme. Prav tako je obvezno pustiti vse povezave, ki vodijo do uradne spletne strani avtorja te programske opreme.
+		
+	PROGRAMSKA OPREMA JE PREDSTAVLJENA "KOT JE", BREZ KAKRŠNEGAKOLI JAMSTVA, IMPLICITNEGA ALI EKSPLICITNEGA. V NOBENEM PRIMERU AVTORJI, DOBAVITELJI IN DISTRIBUTERJI NE PREVZEMAMO NOBENE ODGOVORNOSTI O ŠKODI, IZGUBI DOBIČKA, PRIHODKOV ALI PODATKOV, FINANČNE IZGUBE IN DRUGIH ODGOVORNOSTI ALI POSREDNO, POSEBNO, POSLEDIČNO, EKSEMPLARIČNO ALI KAZNOVALNO ODŠKODNINO.
+	
+	Licenca MIT
+*/
+
+
+/**
+  * Mixin
+  */
+$tablet-width: 768px;
+@mixin tablet {
+  @media (max-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+
+#zavesa {
+  display: none;
+  backdrop-filter: blur(2px);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  overflow: auto;
+}
+
+/**
+  * Pojavno okno
+  */
+#piskotki {
+  display: none;
+  box-sizing: border-box;
+  transform: none;
+  position: fixed;
+  padding: 13px 20px;
+  z-index: 999999;
+  backdrop-filter: blur(20px);
+  text-align: center;
+
+  &.zgoraj-levo {
+    width: 350px;
+    top: 30px;
+    left: 30px;
+
+    @include tablet {
+      width: 100%;
+      top: 0;
+      left: 0;
+      border-radius: 0!important;
+    }
+  }
+
+  &.zgoraj {
+    width: 600px;
+    top: 5px;
+    right: 50%;
+    transform: translateX(50%);
+
+    @include tablet {
+      width: 100%;
+      right: inherit;
+      top: 0;
+      bottom: inherit;
+      left: 0;
+      border-radius: 0!important;
+      transform: none;
+    }
+  }
+
+  &.zgoraj-desno {
+    width: 396px;
+    top: 30px;
+    right: 30px;
+
+    @include tablet {
+      width: 100%;
+      top: 0;
+      right: inherit;
+      bottom: inherit;
+      left: 0;
+      border-radius: 0!important;
+    }
+  }
+
+  &.desno {
+    width: 396px;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+
+    @include tablet {
+      width: 100%;
+      top: inherit;
+      right: inherit;
+      bottom: 0;
+      left: 0;
+      border-radius: 0!important;
+      transform: none;
+    }
+  }
+
+  &.spodaj-desno {
+    width: 396px;
+    bottom: 30px;
+    right: 30px;
+
+    @include tablet {
+      width: 100%;
+      right: inherit;
+      bottom: 0;
+      left: 0;
+      border-radius: 0!important;
+    }
+  }
+
+  &.spodaj {
+    width: 600px;
+    bottom: 5px;
+    right: 50%;
+    transform: translateX(50%);
+
+    @include tablet {
+      width: 100%;
+      right: inherit;
+      bottom: 0;
+      left: 0;
+      border-radius: 0!important;
+      transform: none;
+    }
+  }
+
+  &.spodaj-levo {
+    width: 396px;
+    bottom: 30px;
+    left: 30px;
+
+    @include tablet {
+      width: 100%;
+      left: 0;
+      bottom: 0;
+      border-radius: 0!important;
+    }
+  }
+
+  &.levo {
+    width: 396px;
+    top: 50%;
+    left: 30px;
+    transform: translateY(-50%);
+
+    @include tablet {
+      width: 100%;
+      top: inherit;
+      left: inherit;
+      bottom: 0;
+      left: 0;
+      border-radius: 0!important;
+      transform: none;
+    }
+  }
+
+  &.center {
+    width: 600px;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%,-50%);
+
+    @include tablet {
+      width: 85%;
+    }
+  }
+
+
+  p {
+    font-weight: 400;
+    line-height: 25px;
+
+    strong {
+      font-weight: bolder;
+    }
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  .btn {
+    padding: 13px 20px;
+    display: block;
+    text-align: center;
+    font-weight: bolder;
+    margin: 10px auto 0;
+    text-decoration: none!important;
+    transition: all .5s;
+    width: 150px;
+    border: 2px solid rgba(0,0,0,.1);
+    text-transform: uppercase;
+
+    &:hover {
+      transform: scale(.95);
+      border: 2px solid rgba(0,0,0,.2);
+    }
+  }
+
+  .icon {
+    background: rgba(0,0,0,.1);
+    border-radius: 100%;
+    padding: 6px;
+    display: block;
+    width: 35px;
+    height: 35px;
+    margin: 0 auto;
+  }
+}
+
+
+/**
+  * Animacija okna (bounce)
+  */
+.bounce {
+  animation: bounce 4s infinite;
+}
+
+@keyframes bounce {
+  from {
+    transform: scale3d(1,1,1);
+  }
+
+  50% {
+    transform: scale3d(1.05,1.05,1.05);
+  }
+
+  to {
+    transform: scale3d(1,1,1);
+  }
+}
+
+
+/**
+  * Odzivno oblikovanje - tabele
+  */
+.piskotki {
+  table {
+    border-collapse: collapse!important;
+    height: 100%!important;
+    margin: 0 auto!important;
+    vertical-align: middle!important;
+    width: 100%!important;
+    word-break: normal!important;
+  }
+    
+  table th {
+    padding: 15px;
+    border: 1px solid #ccc;
+    background: #fff;
+    //font-weight: 500;
+  }
+    
+  table td {
+    border-width: 1px;
+    padding: 15px;
+    border: 1px solid #ccc;
+  }
+
+
+  /**
+    * Nastavitev piškotkov - checkbox (na telefonih in tablicah)
+    */
+  @include tablet {
+    input[type='checkbox'] {
+      width: 15px;
+      height: 15px;
+      background: white;
+      vertical-align: middle;
+      margin-right: 5px;
+      appearance: checkbox!important;
+    }
+  }
+}

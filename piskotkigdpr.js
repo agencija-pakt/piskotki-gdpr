@@ -59,7 +59,7 @@ function piskotkiGDPR(_pi) {
  
   
   /**
-    * Izbriši piškot
+    * Izbris piškotka
     */
 	izbrisi = function(ime) {
     document.cookie = ime +'=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
@@ -79,6 +79,7 @@ function piskotkiGDPR(_pi) {
 		}
   };
   
+
   /**
     * Potrditveno polje (checkboxes)
     */
@@ -91,18 +92,31 @@ function piskotkiGDPR(_pi) {
     * HTML okno za piškotke
     */
   okno = document.createElement('div');
+  zavesa = document.createElement('div');
 
 
   /**
     * HTML okno za piškotke
     */
-  okno.innerHTML = '<p><a class="icon" href="https://piskotki-gdpr.pakt.si/"><svg enable-background="new 0 0 16 16" version="1.1" viewBox="0 0 16 16" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">  <image width="16" height="16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAACqVBMVEUAAAChiWbXuILcvILc voLdv4LcvYHcvIHbu4DXtn+hiWXUtH7ZuX7fw4jlzJXhyI3ewIPat3vXtXt3ZEUUEQvSsXrXt3ra uHnVsngUEAvSsXTdwYTYuHfVsnSbgVm9nWzVtXTRrm3SrnLNqWvXuHbSrW3Go2TNqGS+mVm7mFi1 kVDBmletiEq7lFGkgEKviUqhf0ewiEW5kEqjfkJ3XjqkfEC7kUqogEB3XTWceUWfeTyXcTergT+b d0AOCweUcj6cdjqkezyyhUCkeTqYczxVQidvVTCWcTifdzqmezqlezmieDeedTabcziVbzdxVi4O CwXn0p3o05/jy5LZvIDiyI7o0p7p1KTp1qTo1aTRs3etkWDhzpjmzpbhxIjhyZDXvojn06Ho1KLo 06LSvIvn0Zzm0JrkypHbvoC+mFmVdEjUv4vo06Dm0Jziy5Xn0JzmzpfUt3u2jlHRt3uVeE6Mc0ze yZHjy5TKo1+0gz6qhEnbw43ly5LVu4GwlWHJqGrWuHTfxIXYwITXv4bkzJLkzJTApG2Yekyqjl/a wofix4vgxIbfwoHWtHDWt3LUtXHMsHLgxYbhxonhxYngxYnZv4PfxIbhxIbewoLewH/bvnq1llvP r2iwjlGsjlXYunjdvn3ev37ev33SsnDCmVTBnVvYuHLPqmXLqWHQsWjPsGnVs23OqWXUsm7ZuHPa uHO+m1uPYy6RZjG4lVbLpV6/mVPNq2HPrWO9lU+YZCmTcT/RrWbUsGfQrGSDZzqUdkK8mlbFnVXG oVfJpVvAnFaIaTqriUzLpVzPp17OqF7OqF3Hn1fCmlG6lU/EnlTIoFbIn1W4jUrEnFTHn1XFnVS+ k0yfez7BmE/Al07Bl067kkuSazW2j0rBl028kUm5jke7kUi2i0X///+m58f3AAAAUXRSTlMACECK 4fr12ow9CCm37/7+7rU6AQMe0+o6DZj++qUNJeT3WnD807n87v30/eP6ld1J8/xwB6j+2Rs9vOz2 WAERru7+5mQGCl3i/P7+++KHLgym0T/MAAAAAWJLR0TixgGeHAAAAAd0SU1FB+MKHgM5BdraPO0A AAEbSURBVBjTARAB7/4AAAAAAQIDBAUGBwgJCgAAAAAAAAsMDQ5RUlNUDxAREhMAABQVFlVWV1hZ WltcXV4XGAAAGRobX2BhYmNhZGVmZxwdHgAfIGhpamtsbW5vb3BxciEiACMkc3R1dnd4eXp7fH1+ fyUAJoCBgoOEhYaHiImKi4yNJwAojo+QkZKTlJWWl5iZmpspACqcnZ6foKGZmaKjpKWmpysALKip qqusra6vr7CxsrO0LQAutba3uLm6u7y8vb6/wMEvADAxwsPExcbHyMjJysfLMjMANDU2zM3Owc/Q 0dLT1NU3OAAAOTo71tfY2drb3N3ePD0+AAAAP0BB3+Dg3+HhQkNERQAAAAAARkdISUpLTE1OT1AA AOvsa6//fyfvAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDE5LTEwLTMwVDEwOjU3OjA1LTA3OjAw9d3f gwAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxOS0xMC0zMFQxMDo1NzowNS0wNzowMISAZz8AAAAASUVO RK5CYII="/></svg></a><h1>' + _pi.naslov +'</h1></p><p>'+ _pi.besediloEna +'</p><p>'+ _pi.besediloDva +'</p><p><a href="'+ _pi.povezavaPogoji +'">'+ _pi.imePovezavePogoji +'</a></p><p><a href="#" class="btn">'+ _pi.besediloGumba +'</a></p>';
+  okno.innerHTML = '<a class="icon" href="https://piskotki-gdpr.pakt.si/"><svg fill="'+ _pi.barvaIkone +'" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M494.6 255.9c-65.63-.8203-118.6-54.14-118.6-119.9c-65.74 0-119.1-52.97-119.8-118.6c-25.66-3.867-51.8 .2346-74.77 12.07L116.7 62.41C93.35 74.36 74.36 93.35 62.41 116.7L29.6 181.2c-11.95 23.44-16.17 49.92-12.07 75.94l11.37 71.48c4.102 25.9 16.29 49.8 34.81 68.32l51.36 51.39C133.6 466.9 157.3 479 183.2 483.1l71.84 11.37c25.9 4.101 52.27-.1172 75.59-11.95l64.81-33.05c23.32-11.84 42.31-30.82 54.14-54.14l32.93-64.57C494.3 307.7 498.5 281.4 494.6 255.9zM176 367.1c-17.62 0-32-14.37-32-31.1s14.38-31.1 32-31.1s32 14.37 32 31.1S193.6 367.1 176 367.1zM208 208c-17.62 0-32-14.37-32-31.1s14.38-31.1 32-31.1s32 14.37 32 31.1S225.6 208 208 208zM368 335.1c-17.62 0-32-14.37-32-31.1s14.38-31.1 32-31.1s32 14.37 32 31.1S385.6 335.1 368 335.1z"/></svg></a><p><strong>'+ _pi.naslov +'</strong> '+ _pi.besedilo +' <a href="'+ _pi.povezavaPogoji +'">'+ _pi.imePovezavePogoji +'</a></p><a href="#" class="btn">'+ _pi.besediloGumba +'</a>';
+  
+  // Nastavitev ID
   okno.setAttribute('id', 'piskotki');
+  zavesa.setAttribute('id', 'zavesa');
+
+  // Nastavitev Class - Lokacija
+  okno.classList.add(_pi.lokacija);
+
+  // Če je animacija omogočena
   if (_pi.animacija === true) {
-    okno.setAttribute('class', 'bounce');
+    okno.classList.add('bounce');
   }
   document.body.appendChild(okno);
 
+  // Če je zavesa omogočena
+  if (_pi.zavesa === true) {
+    document.body.appendChild(zavesa);
+  }
 
   /**
     * Odstranitev animacije (bounce)
@@ -121,6 +135,7 @@ function piskotkiGDPR(_pi) {
     nastavi('opt-in-social', 'true', _pi.trajanjePiskotka);
     nastavi('opt-in-remarketing', 'true', _pi.trajanjePiskotka);
     document.querySelector('#piskotki').style.display = 'none';
+    document.querySelector('#zavesa').style.display = 'none';
 
     // Osvežitev spletne strani
     setTimeout(function () {
@@ -195,6 +210,9 @@ function piskotkiGDPR(_pi) {
     */
   if (preglej('cookie-notice-accepted') !== true) {
     document.querySelector('#piskotki').style.display = 'block';
+    if (_pi.zavesa) {
+      document.querySelector('#zavesa').style.display = 'block';
+    }
   }
 
 
@@ -225,9 +243,11 @@ function piskotkiGDPR(_pi) {
     */
   document.getElementById('piskotki').style.background = _pi.barvaOzadja;
   document.getElementById('piskotki').style.boxShadow = _pi.sencaOkna;
+  document.getElementById('piskotki').style.borderRadius = _pi.zaobljenostOkna;
 
-  // Oblikovanje naslova
-  document.querySelector('#piskotki h1').style.cssText = 'color: '+ _pi.barvaNaslova +'; font-size: '+ _pi.velikostNaslova +';';
+  if (_pi.zavesa) {
+    document.getElementById('zavesa').style.background = _pi.barvaZavese;
+  }
 
   // Oblikovanje pisave
   var p = document.querySelectorAll('#piskotki p');
