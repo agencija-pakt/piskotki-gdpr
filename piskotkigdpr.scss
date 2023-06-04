@@ -34,6 +34,7 @@ $tablet-width: 768px;
   overflow: auto;
 }
 
+
 /**
   * Pojavno okno
   */
@@ -58,7 +59,7 @@ $tablet-width: 768px;
   text-align: center;
 
   &.zgoraj-levo {
-    width: 350px;
+    width: 500px;
     top: 30px;
     left: 30px;
 
@@ -88,7 +89,7 @@ $tablet-width: 768px;
   }
 
   &.zgoraj-desno {
-    width: 396px;
+    width: 500px;
     top: 30px;
     right: 30px;
 
@@ -103,7 +104,7 @@ $tablet-width: 768px;
   }
 
   &.desno {
-    width: 396px;
+    width: 500px;
     top: 50%;
     right: 30px;
     transform: translateY(-50%);
@@ -120,7 +121,7 @@ $tablet-width: 768px;
   }
 
   &.spodaj-desno {
-    width: 396px;
+    width: 500px;
     bottom: 30px;
     right: 30px;
 
@@ -150,7 +151,7 @@ $tablet-width: 768px;
   }
 
   &.spodaj-levo {
-    width: 396px;
+    width: 500px;
     bottom: 30px;
     left: 30px;
 
@@ -163,7 +164,7 @@ $tablet-width: 768px;
   }
 
   &.levo {
-    width: 396px;
+    width: 500px;
     top: 50%;
     left: 30px;
     transform: translateY(-50%);
@@ -190,14 +191,15 @@ $tablet-width: 768px;
     }
   }
 
-
   p {
     font-weight: 400;
     line-height: 25px;
     margin: 14px 0;
+    text-align: left;
 
     strong {
       font-weight: bolder;
+      font-size: 1.18em;
     }
   }
 
@@ -206,8 +208,8 @@ $tablet-width: 768px;
   }
 
   .btn {
-    padding: 13px 20px;
-    display: block;
+    padding: 11px 21px;
+    display: inline-block;
     text-align: center;
     font-weight: bolder;
     margin: 10px auto 0;
@@ -223,17 +225,82 @@ $tablet-width: 768px;
     }
   }
 
+  .cancel {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid;
+    text-align: center;
+    line-height: 30px;
+    text-decoration: none;
+    margin-left: 10px;
+    opacity: .5;
+    transition: all .5s;
+
+    &:hover {
+      opacity: 1;
+      cursor: pointer;
+      transform: scale(.95);
+    }
+
+    svg {
+      //fill: rgba(255,255,255,.5);
+      width: 15px;
+      height: 15px;
+    }
+  }
+
   .icon {
     background: rgba(0,0,0,.1);
     border-radius: 100%;
     padding: 6px;
-    display: block;
-    width: 35px;
-    height: 35px;
-    margin: 0 auto;
+    display: inline-block;
+    vertical-align: middle;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    position: relative;
+    animation: pulse-dot 2.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) -.4s infinite;
+
+    &:before {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 500%;
+      height: 500%;
+      box-sizing: border-box;
+      top: -200%;
+      left: -200%;
+      border-radius: 100%;
+      background-color: rgba(255,255,255,.1);
+      animation: pulse-ring 2.5s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+      pointer-events: none;
+    }
   }
 }
 
+@keyframes pulse-ring {
+  0% {
+    transform: scale(.33);
+  }
+  80%, 100% {
+    opacity: 0;
+  }
+}
+
+
+@keyframes pulse-dot {
+  0% {
+    transform: scale(.9);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(.9);
+  }
+}
 
 /**
   * Animacija okna (bounce)

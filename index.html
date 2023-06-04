@@ -51,6 +51,10 @@
     margin: 0;
   }
 
+  a {
+    color: #3bba82;
+  }
+
 	hr {
 		border: none;
 		border-bottom: 2px solid #fff;
@@ -93,8 +97,8 @@
 	}
 </style>
 
-<body>
-	<img style="margin: 0 auto; max-width: 570px;" src="img/piskotkigdpr.png" alt="Piškotki GDPR logo" width="570">
+<body onload="document.getElementById('leto').textContent = new Date().getFullYear();">
+	<img style="margin: 0 auto; max-width: 570px;" loading="lazy" src="img/piskotkigdpr.png" alt="Piškotki GDPR logo" width="570">
 
 	<hr>
 
@@ -110,7 +114,7 @@
 
 	<p>Produkt je sestavljen iz skripte (plugin) za popolno funkcionalnost piškotkov za spletne strani. Prav tako pa ponujamo predloge splošnih pogojev, kjer se besedila avtomatsko prilagodijo vašemu naslovu spletne strani. Gre za celovito, varno in najpreprostejšo rešitev na trgu.</p>
 
-	<p style="color: #3bba82;"><strong>Pogoj brezplačne uporabe piskotkiGDPR je navedba povezave avtorja (<a href="https://piskotki-gdpr.pakt.si/" style="color: #3bba82;">piskotkiGDPR</a>). Povezave so že dodane, tako da vam ni potrebno skrbeti, le izbrisati jih ne smete.</strong></p>
+	<p style="color: #ff4e23;"><strong>!! Pogoj brezplačne uporabe piskotkiGDPR je navedba povezave avtorja (<a href="https://piskotki-gdpr.pakt.si/" style="color: #ff4e23;">piskotkiGDPR</a>). Povezave so že dodane, tako da vam ni potrebno skrbeti, le izbrisati jih ne smete.</strong></p>
 
 	<hr>
 	<br>
@@ -141,7 +145,7 @@
 			<li>+ pripravljena avtomatizirana besedila (splošni pogoji, zasebnost, piškotki).</li>
 		</ul>
 		<br>
-		<img width="600" src="img/piskotki-na-spletni-strani.png" alt="piškotki gdpr - za spletne strani">
+		<img width="600" loading="lazy" src="img/piskotki-na-spletni-strani.png" alt="piškotki gdpr - za spletne strani">
 	</section>
 
 	
@@ -171,17 +175,17 @@
 
 		<br>
 
-		<h3><img style="width: 16px; display: inline;" src="img/favicon.png" width="16px" alt="piškot - osnovno delovanje"> cookie-notice-accepted</h3>
+		<h3><img style="width: 16px; display: inline;" loading="lazy" src="img/favicon.png" width="16px" height="16" alt="piškot - osnovno delovanje"> cookie-notice-accepted</h3>
 		<p>Piškotki potrebni za osnovno delovanje strani.</p>
 
 		<br>
 
-		<h3><img style="width: 16px; display: inline;" src="img/favicon.png" width="16px" alt="piškot - družbena omrežja"> opt-in-social</h3>
+		<h3><img style="width: 16px; display: inline;" loading="lazy" src="img/favicon.png" width="16px" height="16" alt="piškot - družbena omrežja"> opt-in-social</h3>
 		<p>Piškotki družbenih omrežij.</p>
 
 		<br>
 
-		<h3><img style="width: 16px; display: inline;" src="img/favicon.png" width="16px" alt="piškot - ponovno trženje"> opt-in-remarketing</h3>
+		<h3><img style="width: 16px; display: inline;" loading="lazy" src="img/favicon.png" width="16px" height="16" alt="piškot - ponovno trženje"> opt-in-remarketing</h3>
 		<p>Piškotki za ponovno trženje.</p>
 	</section>
 
@@ -240,7 +244,7 @@
 		barvaZavese           : 'rgba(0,0,0,.3)',
 
 		lokacija              : 'spodaj-desno',
-		sencaOkna             : '0 10px 20px 0 rgba(0, 0, 0, 0.15)',
+		sencaOkna             : '0 10px 20px 0 rgba(0,0,0,.5)',
 		zaobljenostOkna       : '20px',
 		barvaOzadja           : 'rgba(0,0,0,.7)',
 		animacija             : true,
@@ -252,16 +256,16 @@
 		barvaPisave           : '#fff',
 		velikostPisave        : '14px',
 
-		naslov                : 'Spletno mesto uporablja piškotke.',
+		naslov                : 'Spletno mesto uporablja piškotke',
 
-		besedilo              : 'Tako zagotavljamo storitev, analizo uporabe in funkcionalnosti, ki jih brez piškotkov ne bi mogli nuditi.',
+		besedilo              : 'S piškotki zagotavljamo boljšo uporabniško izkušnjo, enostavnejši pregled vsebin, analizo uporabe, oglasne sisteme in funkcionalnosti. S klikom na »Strinjam se« dovoljuješ vse namene obdelave. Posamezne namene  lahko izbiraš na strani -',
 
 		barvaPovezave         : '#fff',
 		imePovezavePogoji     : 'Nastavitve',
 		povezavaPogoji        : '/piskotki/',
 		velikostPovezave      : '14px',
 
-		besediloGumba         : 'V redu',
+		besediloGumba         : 'Strinjam se',
 		barvaGumba            : '#1be195',
 		zaobljenostGumba      : '100px',
 		barvaGumbaPovezave    : '#4c4c4c',
@@ -300,7 +304,7 @@
 			</tr>
 			<tr>
 				<td>sencaOkna</td>
-				<td>0 10px 20px 0 rgba(0, 0, 0, 0.15)</td>
+				<td>0 10px 20px 0 rgba(0,0,0,.5)</td>
 				<td>Senca okna - prvi del pozicija, drugi del barva</td>
 			</tr>
       <tr>
@@ -345,12 +349,12 @@
 			</tr>
 			<tr>
 				<td>naslov</td>
-				<td>Spletno mesto uporablja piškotke.</td>
+				<td>Spletno mesto uporablja piškotke</td>
 				<td>Glavni naslov v oknu piškoti.</td>
 			</tr>
 			<tr>
 				<td>besedilo</td>
-				<td>Tako zagotavljamo storitev, analizo uporabe in funkcionalnosti, ki jih brez piškotkov ne bi mogli nuditi.</td>
+				<td>S piškotki zagotavljamo boljšo uporabniško izkušnjo, enostavnejši pregled vsebin, analizo uporabe, oglasne sisteme in funkcionalnosti. S klikom na »Strinjam se« dovoljuješ vse namene obdelave. Posamezne namene  lahko izbiraš na strani -</td>
 				<td>Prvo besedilo v oknu piškoti.</td>
 			</tr>
 			<tr>
@@ -360,7 +364,7 @@
 			</tr>
 			<tr>
 				<td>imePovezavePogoji</td>
-				<td>Več o možnih nastavitvah piškotkov.</td>
+				<td>Nastavitve</td>
 				<td>Besedilo povezave, ki pelje na splošne pogoje o piškotkih.</td>
 			</tr>
 			<tr>
@@ -375,7 +379,7 @@
 			</tr>
 			<tr>
 				<td>besediloGumba</td>
-				<td>V redu</td>
+				<td>Strinjam se</td>
 				<td>Besedilo na gumbu (se strinjam).</td>
 			</tr>
 			<tr>
@@ -441,8 +445,8 @@ if (isset($_COOKIE['opt-in-social'])) {
 		<p>Skripta piskotkiGDPR deluje odlično na vseh spletnih platformah. Popolna integracija tudi z Wordpress in Joomla.</p>
     <p>Skripto lahko integrirate le ročno. Vtičnik (plugin) še ne obstaja.</p>
 		<br>
-		<img style="max-width: 137px; display: inline;" src="img/wordpress.png" alt="piškotki wordpress" width="137px">
-		<img style="max-width: 137px; display: inline;" src="img/joomla.png" alt="piškotki joomla" width="137px">
+		<img style="max-width: 137px; display: inline;" loading="lazy" src="img/wordpress.png" alt="piškotki wordpress" width="137px">
+		<img style="max-width: 137px; display: inline;" loading="lazy" src="img/joomla.png" alt="piškotki joomla" width="137px">
 	</section>
 
 
@@ -450,7 +454,7 @@ if (isset($_COOKIE['opt-in-social'])) {
 	<section id="razvoj">
 		<h2>Razvoj</h2>
 		<hr>
-		<p><i>Trenutna verzija produkta: <strong>2.0</strong></i></p>
+		<p><i>Trenutna verzija produkta: <strong>3.0</strong></i></p>
 		<br>
 		<h3>Github</h3>
 		<p>Pomagajte nam pri razvoju in izboljšavi produkta - <a href="https://github.com/agencija-pakt/piskotki-gdpr" target="_blank" rel="noopener noreferrer">obiščite Github</a>.</p>
@@ -461,17 +465,15 @@ if (isset($_COOKIE['opt-in-social'])) {
 	<section id="avtor">
 		<h2>Avtor</h2>
 		<hr>
-		<img style="max-width: 600px;" src="img/agencija-pakt.png" alt="digitalna agencija pakt">
+		<img style="max-width: 600px;" loading="lazy" src="img/agencija-pakt.png" alt="digitalna agencija pakt">
 		<h3>Avtor programske opreme piskotkiGDPR je:</h3>
 		<p>
-			<strong>Agencija Pakt d.o.o.</strong><br>
-			<a style="color: #282828; text-decoration: none;" href="https://g.page/AgencijaPakt?share">Pod hrasti 29, 1218 Komenda</a>,<br>
-			T: <a href="tel:015637228">(01) 563 72 28</a><br>
-			M: <a href="mailto:info@pakt.si">info@pakt.si</a>
+      <strong>Agencija Pakt d.o.o.</strong> - <a href="https://www.pakt.si/" target="_blank" rel="noopener noreferrer">Marketinška agencija</a> 
+			<br>
+			<a style="color: #282828; text-decoration: none;" href="https://g.page/AgencijaPakt?share">Pod hrasti 29, 1218 Komenda</a>,<br><br>
+			Telefon: <a href="tel:015637228">(01) 563 72 28</a><br>
+			E-naslov: <a href="mailto:info@pakt.si">info@pakt.si</a>
 		</p>
-		<br>
-		<h3>Pomoč</h3>
-		<p>Potrebujete pomoč pri integraciji piškotkov na vaši spletni strani? Kontaktirajte nas, z veseljem vam pomagamo! - <a href="https://www.pakt.si/" target="_blank" rel="noopener noreferrer">www.pakt.si</a>.</p>
 	</section>
 
 
@@ -509,11 +511,13 @@ if (isset($_COOKIE['opt-in-social'])) {
 		</p>
 	</section>
 
-	<p>2022 © Agencija Pakt d.o.o. Vse pravice pridržane.</p>
+	<p><span id="leto"></span> © Agencija Pakt d.o.o. Vse pravice pridržane.</p>
 	<nav>
-		<li><a href="pogoji/splosnipogoji">Splošni pogoji</a></li>
-		<li><a href="pogoji/zasebnost">Zasebnost</a></li>
-		<li><a href="pogoji/piskotki">Piškotki</a></li>
+    <ul>
+      <li><a href="pogoji/splosnipogoji">Splošni pogoji</a></li>
+      <li><a href="pogoji/zasebnost">Zasebnost</a></li>
+      <li><a href="pogoji/piskotki">Piškotki</a></li>
+    </ul>
 	</nav>
 </body>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -541,16 +545,16 @@ if (isset($_COOKIE['opt-in-social'])) {
 		barvaPisave           : '#fff',
 		velikostPisave        : '14px',
 
-		naslov                : 'Spletno mesto uporablja piškotke.',
+		naslov                : 'Spletno mesto uporablja piškotke',
 
-		besedilo              : 'Tako zagotavljamo storitev, analizo uporabe in funkcionalnosti, ki jih brez piškotkov ne bi mogli nuditi.',
+		besedilo              : 'S piškotki zagotavljamo boljšo uporabniško izkušnjo, enostavnejši pregled vsebin, analizo uporabe, oglasne sisteme in funkcionalnosti. S klikom na »Strinjam se« dovoljuješ vse namene obdelave. Posamezne namene  lahko izbiraš na strani -',
 
 		barvaPovezave         : '#fff',
 		imePovezavePogoji     : 'Nastavitve',
 		povezavaPogoji        : '/piskotki/',
 		velikostPovezave      : '14px',
 
-		besediloGumba         : 'V redu',
+		besediloGumba         : 'Strinjam se',
 		barvaGumba            : '#1be195',
     zaobljenostGumba      : '100px',
 		barvaGumbaPovezave    : '#4c4c4c',
