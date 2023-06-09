@@ -30,7 +30,7 @@ function piskotkiGDPR(e) {
   /**
     * Pridobitev piškotov in vrnitev rezultata vsebine piškotkov, če vsebine ni, podamo prazno vsebino
     */
-  const pridobi = (ime) => {
+  pridobi = (ime) => {
     const cookies = document.cookie.split(';')
       .map(cookie => cookie.trim())
       .reduce((cookieMap, cookie) => {
@@ -46,7 +46,7 @@ function piskotkiGDPR(e) {
   /**
     * Nastavitev piškota glede na ('ime piškotka', 'vsebina piškotka', 'čas trajanja piškotka - glede na dan')
     */
-  const nastavi = (ime, vrednost, trajanje) => {
+  nastavi = (ime, vrednost, trajanje) => {
     const expires = new Date();
     expires.setDate(expires.getDate() + trajanje);
     const cookie = `${ime}=${encodeURIComponent(vrednost)}${(trajanje ? `; expires=${expires.toUTCString()}` : '')}; path=/;`;
@@ -57,7 +57,7 @@ function piskotkiGDPR(e) {
   /**
     * Izbris piškotka
     */
-  const izbrisi = (ime) => {
+  izbrisi = (ime) => {
     document.cookie = `${ime}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
     document.cookie = `${ime}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.${getDomenaStrani().replace(/\s/g, '')};`;
   };
@@ -66,7 +66,7 @@ function piskotkiGDPR(e) {
   /**
     * Če piškot obstaja, vrnemo "true" ali "false"
     */
-  const preglej = (ime) => {
+  preglej = (ime) => {
     return !!pridobi(ime);
   };
   
