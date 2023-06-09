@@ -20,7 +20,7 @@ function piskotkiGDPR(e) {
   /**
     * Pridobitev domene strani iz URL naslova
     */
-  const getDomenaStrani = () => {
+  const domena = () => {
     return window.location.hostname || imeStrani;
   };
 
@@ -59,7 +59,7 @@ function piskotkiGDPR(e) {
     */
   izbrisi = (ime) => {
     document.cookie = `${ime}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
-    document.cookie = `${ime}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.${getDomenaStrani().replace(/\s/g, '')};`;
+    document.cookie = `${ime}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.${domena().replace(/\s/g, '')};`;
   };
  
   
@@ -153,7 +153,7 @@ function piskotkiGDPR(e) {
 
 
   /**
-    * Piškot - cookie-notice-accepted
+    * Piškot - cookie-notice-accepted (cancel btn)
     */
   document.querySelector('#piskotki .cancel').addEventListener('click', (event) => {
     event.preventDefault();
@@ -181,7 +181,8 @@ function piskotkiGDPR(e) {
         nastavi('opt-in-social', 'true', e.trajanjePiskotka);
       } else {
         izbrisi('opt-in-social');
-        // Izbris drugih piškotkov povezanih s socialnimi omrežji
+        // Izbris drugih piškotkov povezanih s družbenimi omrežji
+        //
       }
     }, false);
   }
@@ -197,6 +198,7 @@ function piskotkiGDPR(e) {
       } else {
         izbrisi('opt-in-remarketing');
         // Izbris drugih remarketing piškotkov
+        //
       }
     }, false);
   }
@@ -263,7 +265,7 @@ function piskotkiGDPR(e) {
   // Avtomatska sprememba pogojev z imenom strani
   const imeStrani = document.querySelectorAll('.ime-strani');
   for (let i = 0; i < imeStrani.length; i++) {
-    imeStrani[i].innerHTML = getDomenaStrani();
+    imeStrani[i].innerHTML = domena();
     imeStrani[i].style.fontWeight = 'bold';
   }
 } // piskotkiGDPR
