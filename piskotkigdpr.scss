@@ -1,20 +1,68 @@
 /**
-	Copyright (c) Agencija Pakt d.o.o.</strong> (vse pravice pridržane)
+KONČNI UPORABNIŠKI LICENČNI SPORAZUM (EULA) ZA vtičnik: piskotkiGDPR
 
-	Dovoljenje je brezplačno podeljeno vsaki osebi, ki prejme kopijo. Ta programska oprema in povezane datoteke, je treba obravnavati brez omejitev, vključno s pravicami do neomejene uporabe, kopiranja, spreminjanja, združevanja, objavljanja, distributiranja, licenciranja in/ali prodajanja programske opreme. Osebam, ki jim je programska oprema zagotovljena morajo upoštevati naslednje pogoje:
-		
-	Zgornje (copywrite) obvestilo in obvestilu o dovoljenju je potrebno vključiti v vse kopije programske opreme. Prav tako je obvezno pustiti vse povezave, ki vodijo do uradne spletne strani avtorja te programske opreme.
-		
-	PROGRAMSKA OPREMA JE PREDSTAVLJENA "KOT JE", BREZ KAKRŠNEGAKOLI JAMSTVA, IMPLICITNEGA ALI EKSPLICITNEGA. V NOBENEM PRIMERU AVTORJI, DOBAVITELJI IN DISTRIBUTERJI NE PREVZEMAMO NOBENE ODGOVORNOSTI O ŠKODI, IZGUBI DOBIČKA, PRIHODKOV ALI PODATKOV, FINANČNE IZGUBE IN DRUGIH ODGOVORNOSTI ALI POSREDNO, POSEBNO, POSLEDIČNO, EKSEMPLARIČNO ALI KAZNOVALNO ODŠKODNINO.
-	
-	Licenca MIT
+Ta končni uporabniški licenčni sporazum ("Sporazum") predstavlja pravni dogovor med vami, končnim uporabnikom, in Agencijo Pakt d.o.o. ("Razvijalec"), v zvezi z uporabo vtičnika piskotkiGDPR ("Vtičnik"). Z namestitvijo, kopiranjem ali drugačno uporabo vtičnika se strinjate, da boste zavezani pogojem tega sporazuma. Če se s pogoji ne strinjate, vtičnika ne smete namestiti ali uporabljati.
+
+1. Podelitev licence
+
+Razvijalec vam podeljuje omejeno, neekskluzivno, neprenosljivo licenco za namestitev in uporabo vtičnika na eni (1) spletni strani. Ta licenca izrecno prepoveduje preprodajo, razdeljevanje ali dajanje vtičnika na voljo kateri koli tretji osebi, razen če je to izrecno dovoljeno s tem sporazumom.
+
+2. Omejitve uporabe
+
+Razen kot je izrecno dovoljeno s tem sporazumom ali z zakonom, ne smete modificirati, kopirati, razstavljati, obratno inženirati, dekompilirati ali ustvarjati izpeljanih del na podlagi vtičnika ali katerega koli njegovega dela.
+
+3. Avtorske pravice in lastništvo
+
+Vtičnik, vključno z vso pripadajočo programsko kodo, dokumentacijo in drugimi materiali, je zaščiten z avtorskimi pravicami in drugimi zakoni o intelektualni lastnini pod zaščito EU in Republike Slovenije. Razvijalec ohranja vse pravice, ki niso izrecno podeljene v tem sporazumu.
+
+4. Nadgradnje
+
+Razvijalec lahko, a ni dolžan, ponudi nadgradnje ali posodobitve za vtičnik. Vse nadgradnje ali posodobitve bodo urejene s pogoji tega sporazuma, razen če je za posamezno nadgradnjo ali posodobitev naveden drugačen licenčni sporazum.
+
+5. Preklic licence
+
+Če ne upoštevate pogojev tega sporazuma, se vam lahko licenca za uporabo vtičnika avtomatsko prekliče brez obvestila s strani razvijalca.
+
+6. Vračilo
+
+V skladu z zakonodajo EU in Republike Slovenije imate pravico do odstopa od nakupa brez navedbe razloga v roku 14 dni od dneva nakupa, pod pogojem, da vtičnika niste namestili ali uporabili. Zahtevke za vračilo obravnavamo v skladu z veljavnimi zakoni o varstvu potrošnikov.
+
+7. Skladnost z GDPR in ZVOP-1/ZVOP-2
+
+Uporabnik vtičnika sam zagotavlja, da je spletno mesto v skladu z veljavnimi predpisi o varstvu podatkov, vključno z Splošno uredbo EU o varstvu podatkov (GDPR), Zakonom o varstvu osebnih podatkov (ZVOP-1) in morebitnimi naslednjimi spremembami ali nadomestnimi zakoni (ZVOP-2), ter je odgovornost za pravilno uporabo vtičnika v skladu z omenjenimi predpisi na strani uporabnika. Razvijalec ne prevzema odgovornosti za kakršno koli uporabo vtičnika.
+
+8. Omejitev odgovornosti
+
+Razvijalec ne prevzema nikakršne odgovornosti za morebitno škodo ali izgubo podatkov, ki izhaja iz uporabe ali nezmožnosti uporabe vtičnika. Poleg tega uporabnik vtičnika prevzema vso odgovornost v primeru kakršnih koli pravnih sporov, ki izhajajo iz uporabe vtičnika, vključno z, a ne omejeno na, vprašanja skladnosti z zakonodajo o varstvu podatkov ali intelektualne lastnine. Razvijalec vtičnika je izrecno oproščen kakršne koli odgovornosti v zvezi s pravnimi spori, ki bi lahko nastali v povezavi z uporabo vtičnika. Uporabnik se strinja, da bo branil, nadomestil škodo in razbremenil razvijalca od vseh obveznosti, škod, stroškov in izdatkov (vključno z, vendar ne omejeno na, odvetniške honorarje), ki izhajajo iz kakršnih koli zahtevkov, tožb ali drugih postopkov, ki izhajajo iz uporabe vtičnika, kršitve tega sporazuma ali kršitve katere koli pravice tretjih oseb.
+
+
+Z namestitvijo ali uporabo vtičnika se izrecno strinjate z zgornjimi pogoji.
+
+AGENCIJA PAKT d.o.o.
+Pod hrasti 29, Poslovna cona Žeje pri Komendi, 1218 Komenda
+Matična številka: 834747600
 */
 
 
 /**
   * Mixin
   */
+$mobile-width: 374px;
+$mobile-large-width: 525px;
 $tablet-width: 768px;
+
+@mixin mobile {
+  @media (max-width: #{$mobile-width}) {
+    @content;
+  }
+}
+
+@mixin mobile-large {
+  @media (max-width: #{$mobile-large-width}) {
+    @content;
+  }
+}
+
 @mixin tablet {
   @media (max-width: #{$tablet-width}) {
     @content;
@@ -22,7 +70,7 @@ $tablet-width: 768px;
 }
 
 
-#zavesa {
+#piskotki-gdpr-zavesa {
   display: none;
   backdrop-filter: blur(2px);
   width: 100%;
@@ -38,7 +86,7 @@ $tablet-width: 768px;
 /**
   * Pojavno okno
   */
-#piskotki {
+#piskotki-gdpr {
   * {
     margin: 0;
     padding: 0;
@@ -58,144 +106,154 @@ $tablet-width: 768px;
   backdrop-filter: blur(20px);
   text-align: center;
 
-  &.zgoraj-levo {
-    width: 500px;
+  &.piskotki-gdpr-zgoraj-levo {
+    width: 465px;
     top: 30px;
     left: 30px;
 
-    @include tablet {
-      width: 100%;
+    @include mobile-large {
+      width: 98%;
       top: 0;
-      left: 0;
-      border-radius: 0!important;
+      right: inherit;
+      bottom: inherit;
+      left: 50%;
+      transform: translate(-50%, 2%);
     }
   }
 
-  &.zgoraj {
-    width: 600px;
+  &.piskotki-gdpr-zgoraj {
+    width: 465px;
     top: 5px;
     right: 50%;
     transform: translateX(50%);
 
-    @include tablet {
-      width: 100%;
-      right: inherit;
+    @include mobile-large {
+      width: 98%;
       top: 0;
+      right: inherit;
       bottom: inherit;
-      left: 0;
-      border-radius: 0!important;
-      transform: none;
+      left: 50%;
+      transform: translate(-50%, 2%);
     }
   }
 
-  &.zgoraj-desno {
-    width: 500px;
+  &.piskotki-gdpr-zgoraj-desno {
+    width: 465px;
     top: 30px;
     right: 30px;
 
-    @include tablet {
-      width: 100%;
+    @include mobile-large {
+      width: 98%;
       top: 0;
-      right: inherit;
+      right: 50%;
       bottom: inherit;
-      left: 0;
-      border-radius: 0!important;
+      left: inherit;
+      transform: translate(50%, 2%);
     }
   }
 
-  &.desno {
-    width: 500px;
+  &.piskotki-gdpr-desno {
+    width: 465px;
     top: 50%;
     right: 30px;
     transform: translateY(-50%);
 
-    @include tablet {
-      width: 100%;
+    @include mobile-large {
+      width: 98%;
       top: inherit;
-      right: inherit;
+      right: 50%;
       bottom: 0;
-      left: 0;
-      border-radius: 0!important;
-      transform: none;
+      left: inherit;
+      transform: translate(50%, -2%);
     }
   }
 
-  &.spodaj-desno {
-    width: 500px;
+  &.piskotki-gdpr-spodaj-desno {
+    width: 465px;
     bottom: 30px;
     right: 30px;
 
-    @include tablet {
-      width: 100%;
-      right: inherit;
+    @include mobile-large {
+      width: 98%;
+      top: inherit;
+      right: 50%;
       bottom: 0;
-      left: 0;
-      border-radius: 0!important;
+      left: inherit;
+      transform: translate(50%, -2%);
     }
   }
 
-  &.spodaj {
-    width: 600px;
+  &.piskotki-gdpr-spodaj {
+    width: 465px;
     bottom: 5px;
     right: 50%;
     transform: translateX(50%);
 
-    @include tablet {
-      width: 100%;
-      right: inherit;
+    @include mobile-large {
+      width: 98%;
+      top: inherit;
+      right: 50%;
       bottom: 0;
-      left: 0;
-      border-radius: 0!important;
-      transform: none;
+      left: inherit;
+      transform: translate(50%, -2%);
     }
   }
 
-  &.spodaj-levo {
-    width: 500px;
+  &.piskotki-gdpr-spodaj-levo {
+    width: 465px;
     bottom: 30px;
     left: 30px;
 
-    @include tablet {
-      width: 100%;
-      left: 0;
+    @include mobile-large {
+      width: 98%;
+      top: inherit;
+      right: inherit;
       bottom: 0;
-      border-radius: 0!important;
+      left: 50%;
+      transform: translate(-50%, -2%);
     }
   }
 
-  &.levo {
-    width: 500px;
+  &.piskotki-gdpr-levo {
+    width: 465px;
     top: 50%;
     left: 30px;
     transform: translateY(-50%);
 
-    @include tablet {
-      width: 100%;
+    @include mobile-large {
+      width: 98%;
       top: inherit;
       left: inherit;
       bottom: 0;
-      left: 0;
-      border-radius: 0!important;
-      transform: none;
+      left: 50%;
+      transform: translate(-50%, -3%);
     }
   }
 
-  &.center {
-    width: 600px;
+  &.piskotki-gdpr-center {
+    width: 465px;
     top: 50%;
     right: 50%;
-    transform: translate(50%,-50%);
+    transform: translate(50%, -50%);
+    user-select: none;
 
-    @include tablet {
-      width: 85%;
+    @include mobile-large {
+      width: 98%;
     }
   }
 
   p {
     font-weight: 400;
-    line-height: 25px;
-    margin: 14px 0;
+    line-height: 1.6em;
+    margin: 0;
+    padding: 0;
+    outline: 0;
     text-align: left;
+    color: inherit;
+    font-family: inherit;
+    font-size: 1.18em;
+    vertical-align: baseline;
+    letter-spacing: inherit;
 
     strong {
       font-weight: bolder;
@@ -205,54 +263,139 @@ $tablet-width: 768px;
 
   a {
     text-decoration: underline;
+    font-weight: 400;
+    line-height: 25px;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    text-align: left;
+    color: inherit;
+    font-family: inherit;
+    font-size: 1.18em;
+    vertical-align: baseline;
+    letter-spacing: inherit;
   }
 
-  .btn {
-    padding: 11px 21px;
+  .piskotki-gdpr-title {
+    margin-top: 10px;
+
+    span {
+      font-weight: bolder;
+    }
+  }
+
+  .piskotki-gdpr-main-text {
+    margin-top: 10px;
+  }
+
+  .piskotki-gdpr-input {
+    user-select: none;
+
+    input {
+      vertical-align: middle;
+      cursor: pointer;
+
+      &:disabled {
+        cursor: not-allowed;
+        pointer-events: none;
+      }
+    }
+
+    label {
+      font-size: 12px;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+
+    input[type="checkbox"]:disabled+label {
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+  }
+
+  .piskotki-gdpr-center {
+    margin: 15px auto;
+    user-select: none;
+
+    @include mobile {
+      margin: 10px auto;
+    }
+  }
+
+  .piskotki-gdpr-btn {
+    padding: 8px 28px;
     display: inline-block;
     text-align: center;
     font-weight: bolder;
-    margin: 10px auto 0;
-    text-decoration: none!important;
+    margin: 0 15px 0;
+    text-decoration: none !important;
     transition: all .5s;
-    width: 150px;
-    border: 2px solid rgba(0,0,0,.1);
-    text-transform: uppercase;
+    border: 2px solid rgba(0, 0, 0, .1);
+    line-height: 25px;
+    outline: 0;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    vertical-align: baseline;
+    letter-spacing: inherit;
 
     &:hover {
       transform: scale(.95);
-      border: 2px solid rgba(0,0,0,.2);
+      border: 2px solid rgba(0, 0, 0, .2);
+    }
+
+    @include tablet {
+      margin: 0 10px 0;
+      padding: 8px 26px;
+    }
+
+    @include mobile-large {
+      margin: 0 5px;
+      padding: 6px 22px;
+    }
+
+    @include mobile {
+      display: block;
+      margin: 10px 0;
     }
   }
 
-  .cancel {
+  .piskotki-gdpr-btn-sec {
     display: inline-block;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    border: 2px solid;
     text-align: center;
-    line-height: 30px;
     text-decoration: none;
-    margin-left: 10px;
     opacity: .5;
     transition: all .5s;
+    outline: 0;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    vertical-align: baseline;
+    letter-spacing: inherit;
+    border: 1px dotted;
+    border-radius: 100px;
+    padding: 12px 14px;
+    line-height: 0px;
+    min-width: 71px;
 
     &:hover {
       opacity: 1;
-      cursor: pointer;
       transform: scale(.95);
     }
 
-    svg {
-      //fill: rgba(255,255,255,.5);
-      width: 15px;
-      height: 15px;
+    @include tablet {
+      padding: 12px 12px;
+    }
+
+    @include mobile {
+      display: block;
+      margin-top: 10px;
+      padding: 16px 22px;
     }
   }
 
-  .icon {
-    background: rgba(0,0,0,.1);
+  .piskotki-gdpr-icon {
+    background: rgba(0, 0, 0, .1);
     border-radius: 100%;
     padding: 6px;
     display: inline-block;
@@ -261,7 +404,8 @@ $tablet-width: 768px;
     height: 30px;
     margin-right: 10px;
     position: relative;
-    animation: pulse-dot 2.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) -.4s infinite;
+    will-change: transform;
+    //animation: piskotki-gdpr-pulse-dot 2.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) -.4s infinite;
 
     &:before {
       content: '';
@@ -273,53 +417,154 @@ $tablet-width: 768px;
       top: -200%;
       left: -200%;
       border-radius: 100%;
-      background-color: rgba(255,255,255,.1);
-      animation: pulse-ring 2.5s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+      background-color: rgba(255, 255, 255, .1);
+      will-change: transform;
+      animation: piskotki-gdpr-pulse-ring 2.5s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
       pointer-events: none;
+    }
+  }
+
+
+  /**
+    * Flexbox
+    */
+  .piskotki-gdpr-flex {
+    margin-top: 10px !important;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+
+    .piskotki-gdpr-flex-inside {
+      border: 1px dotted;
+      padding: 8px 8px 4px;
+      margin-top: 4px;
+      display: flex;
+      width: 100%;
+
+      p {
+        width: 85% !important;
+        font-weight: bolder !important;
+      }
+
+      .right {
+        width: 15%;
+        text-align: right;
+
+        label {
+          margin: 0 !important;
+        }
+      }
     }
   }
 }
 
-@keyframes pulse-ring {
+@keyframes piskotki-gdpr-pulse-ring {
   0% {
     transform: scale(.33);
   }
-  80%, 100% {
+
+  80%,
+  100% {
     opacity: 0;
   }
 }
 
 
-@keyframes pulse-dot {
+@keyframes piskotki-gdpr-pulse-dot {
   0% {
     transform: scale(.9);
   }
+
   50% {
     transform: scale(1.2);
   }
+
   100% {
     transform: scale(.9);
   }
 }
 
+
 /**
   * Animacija okna (bounce)
   */
-.bounce {
-  animation: bounce 4s infinite;
+.piskotki-gdpr-bounce {
+  animation: piskotki-gdpr-bounce 4s infinite;
 }
 
-@keyframes bounce {
+@keyframes piskotki-gdpr-bounce {
   from {
-    transform: scale3d(1,1,1);
+    transform: scale3d(1, 1, 1);
   }
 
   50% {
-    transform: scale3d(1.05,1.05,1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
   }
 
   to {
-    transform: scale3d(1,1,1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+
+.piskotki-gdpr-form-container {
+
+  /**
+    * Slider on/off style
+    */
+  .piskotki-gdpr-switch {
+    display: inline-block;
+    height: 22px;
+    position: relative;
+    width: 33px;
+  }
+
+  .piskotki-gdpr-switch input {
+    display: none;
+  }
+
+  .piskotki-gdpr-slider {
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+  }
+
+  .piskotki-gdpr-slider:before {
+    background-color: #fff;
+    bottom: 4px;
+    content: "";
+    height: 14px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 14px;
+  }
+
+  input:checked+.piskotki-gdpr-slider {
+    background-color: #66bb6a;
+  }
+
+  input:checked+.piskotki-gdpr-slider:before {
+    transform: translateX(11px);
+  }
+
+  .piskotki-gdpr-slider.piskotki-gdpr-round {
+    border-radius: 32px;
+  }
+
+  .piskotki-gdpr-slider.piskotki-gdpr-round:before {
+    border-radius: 50%;
+  }
+
+  .piskotki-gdpr-slider.piskotki-gdpr-disabled {
+    opacity: 0.8;
+    filter: grayscale(0.2);
+    cursor: not-allowed;
   }
 }
 
@@ -327,23 +572,23 @@ $tablet-width: 768px;
 /**
   * Odzivno oblikovanje - tabele
   */
-.piskotki {
+.piskotki-gdpr {
   table {
-    border-collapse: collapse!important;
-    height: 100%!important;
-    margin: 0 auto!important;
-    vertical-align: middle!important;
-    width: 100%!important;
-    word-break: normal!important;
+    border-collapse: collapse !important;
+    height: 100% !important;
+    margin: 0 auto !important;
+    vertical-align: middle !important;
+    width: 100% !important;
+    word-break: normal !important;
   }
-    
+
   table th {
     padding: 15px;
     border: 1px solid #ccc;
     background: #fff;
     //font-weight: 500;
   }
-    
+
   table td {
     border-width: 1px;
     padding: 15px;
@@ -361,7 +606,7 @@ $tablet-width: 768px;
       background: white;
       vertical-align: middle;
       margin-right: 5px;
-      appearance: checkbox!important;
+      appearance: checkbox !important;
     }
   }
 }

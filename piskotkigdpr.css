@@ -1,19 +1,52 @@
 @charset "UTF-8";
 /**
-	Copyright (c) Agencija Pakt d.o.o.</strong> (vse pravice pridržane)
+KONČNI UPORABNIŠKI LICENČNI SPORAZUM (EULA) ZA vtičnik: piskotkiGDPR
 
-	Dovoljenje je brezplačno podeljeno vsaki osebi, ki prejme kopijo. Ta programska oprema in povezane datoteke, je treba obravnavati brez omejitev, vključno s pravicami do neomejene uporabe, kopiranja, spreminjanja, združevanja, objavljanja, distributiranja, licenciranja in/ali prodajanja programske opreme. Osebam, ki jim je programska oprema zagotovljena morajo upoštevati naslednje pogoje:
+Ta končni uporabniški licenčni sporazum ("Sporazum") predstavlja pravni dogovor med vami, končnim uporabnikom, in Agencijo Pakt d.o.o. ("Razvijalec"), v zvezi z uporabo vtičnika piskotkiGDPR ("Vtičnik"). Z namestitvijo, kopiranjem ali drugačno uporabo vtičnika se strinjate, da boste zavezani pogojem tega sporazuma. Če se s pogoji ne strinjate, vtičnika ne smete namestiti ali uporabljati.
 
-	Zgornje (copywrite) obvestilo in obvestilu o dovoljenju je potrebno vključiti v vse kopije programske opreme. Prav tako je obvezno pustiti vse povezave, ki vodijo do uradne spletne strani avtorja te programske opreme.
+1. Podelitev licence
 
-	PROGRAMSKA OPREMA JE PREDSTAVLJENA "KOT JE", BREZ KAKRŠNEGAKOLI JAMSTVA, IMPLICITNEGA ALI EKSPLICITNEGA. V NOBENEM PRIMERU AVTORJI, DOBAVITELJI IN DISTRIBUTERJI NE PREVZEMAMO NOBENE ODGOVORNOSTI O ŠKODI, IZGUBI DOBIČKA, PRIHODKOV ALI PODATKOV, FINANČNE IZGUBE IN DRUGIH ODGOVORNOSTI ALI POSREDNO, POSEBNO, POSLEDIČNO, EKSEMPLARIČNO ALI KAZNOVALNO ODŠKODNINO.
+Razvijalec vam podeljuje omejeno, neekskluzivno, neprenosljivo licenco za namestitev in uporabo vtičnika na eni (1) spletni strani. Ta licenca izrecno prepoveduje preprodajo, razdeljevanje ali dajanje vtičnika na voljo kateri koli tretji osebi, razen če je to izrecno dovoljeno s tem sporazumom.
 
-	Licenca MIT
+2. Omejitve uporabe
+
+Razen kot je izrecno dovoljeno s tem sporazumom ali z zakonom, ne smete modificirati, kopirati, razstavljati, obratno inženirati, dekompilirati ali ustvarjati izpeljanih del na podlagi vtičnika ali katerega koli njegovega dela.
+
+3. Avtorske pravice in lastništvo
+
+Vtičnik, vključno z vso pripadajočo programsko kodo, dokumentacijo in drugimi materiali, je zaščiten z avtorskimi pravicami in drugimi zakoni o intelektualni lastnini pod zaščito EU in Republike Slovenije. Razvijalec ohranja vse pravice, ki niso izrecno podeljene v tem sporazumu.
+
+4. Nadgradnje
+
+Razvijalec lahko, a ni dolžan, ponudi nadgradnje ali posodobitve za vtičnik. Vse nadgradnje ali posodobitve bodo urejene s pogoji tega sporazuma, razen če je za posamezno nadgradnjo ali posodobitev naveden drugačen licenčni sporazum.
+
+5. Preklic licence
+
+Če ne upoštevate pogojev tega sporazuma, se vam lahko licenca za uporabo vtičnika avtomatsko prekliče brez obvestila s strani razvijalca.
+
+6. Vračilo
+
+V skladu z zakonodajo EU in Republike Slovenije imate pravico do odstopa od nakupa brez navedbe razloga v roku 14 dni od dneva nakupa, pod pogojem, da vtičnika niste namestili ali uporabili. Zahtevke za vračilo obravnavamo v skladu z veljavnimi zakoni o varstvu potrošnikov.
+
+7. Skladnost z GDPR in ZVOP-1/ZVOP-2
+
+Uporabnik vtičnika sam zagotavlja, da je spletno mesto v skladu z veljavnimi predpisi o varstvu podatkov, vključno z Splošno uredbo EU o varstvu podatkov (GDPR), Zakonom o varstvu osebnih podatkov (ZVOP-1) in morebitnimi naslednjimi spremembami ali nadomestnimi zakoni (ZVOP-2), ter je odgovornost za pravilno uporabo vtičnika v skladu z omenjenimi predpisi na strani uporabnika. Razvijalec ne prevzema odgovornosti za kakršno koli uporabo vtičnika.
+
+8. Omejitev odgovornosti
+
+Razvijalec ne prevzema nikakršne odgovornosti za morebitno škodo ali izgubo podatkov, ki izhaja iz uporabe ali nezmožnosti uporabe vtičnika. Poleg tega uporabnik vtičnika prevzema vso odgovornost v primeru kakršnih koli pravnih sporov, ki izhajajo iz uporabe vtičnika, vključno z, a ne omejeno na, vprašanja skladnosti z zakonodajo o varstvu podatkov ali intelektualne lastnine. Razvijalec vtičnika je izrecno oproščen kakršne koli odgovornosti v zvezi s pravnimi spori, ki bi lahko nastali v povezavi z uporabo vtičnika. Uporabnik se strinja, da bo branil, nadomestil škodo in razbremenil razvijalca od vseh obveznosti, škod, stroškov in izdatkov (vključno z, vendar ne omejeno na, odvetniške honorarje), ki izhajajo iz kakršnih koli zahtevkov, tožb ali drugih postopkov, ki izhajajo iz uporabe vtičnika, kršitve tega sporazuma ali kršitve katere koli pravice tretjih oseb.
+
+
+Z namestitvijo ali uporabo vtičnika se izrecno strinjate z zgornjimi pogoji.
+
+AGENCIJA PAKT d.o.o.
+Pod hrasti 29, Poslovna cona Žeje pri Komendi, 1218 Komenda
+Matična številka: 834747600
 */
 /**
   * Mixin
   */
-#zavesa {
+#piskotki-gdpr-zavesa {
   display: none;
   -webkit-backdrop-filter: blur(2px);
           backdrop-filter: blur(2px);
@@ -29,7 +62,7 @@
 /**
   * Pojavno okno
   */
-#piskotki {
+#piskotki-gdpr {
   display: none;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -41,8 +74,11 @@
   -webkit-backdrop-filter: blur(20px);
           backdrop-filter: blur(20px);
   text-align: center;
+  /**
+    * Flexbox
+    */
 }
-#piskotki * {
+#piskotki-gdpr * {
   margin: 0;
   padding: 0;
   border: 0;
@@ -52,204 +88,311 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-#piskotki.zgoraj-levo {
-  width: 500px;
+#piskotki-gdpr.piskotki-gdpr-zgoraj-levo {
+  width: 465px;
   top: 30px;
   left: 30px;
 }
-@media (max-width: 768px) {
-  #piskotki.zgoraj-levo {
-    width: 100%;
+@media (max-width: 525px) {
+  #piskotki-gdpr.piskotki-gdpr-zgoraj-levo {
+    width: 98%;
     top: 0;
-    left: 0;
-    border-radius: 0 !important;
+    right: inherit;
+    bottom: inherit;
+    left: 50%;
+    -webkit-transform: translate(-50%, 2%);
+            transform: translate(-50%, 2%);
   }
 }
-#piskotki.zgoraj {
-  width: 600px;
+#piskotki-gdpr.piskotki-gdpr-zgoraj {
+  width: 465px;
   top: 5px;
   right: 50%;
   -webkit-transform: translateX(50%);
           transform: translateX(50%);
 }
-@media (max-width: 768px) {
-  #piskotki.zgoraj {
-    width: 100%;
-    right: inherit;
+@media (max-width: 525px) {
+  #piskotki-gdpr.piskotki-gdpr-zgoraj {
+    width: 98%;
     top: 0;
+    right: inherit;
     bottom: inherit;
-    left: 0;
-    border-radius: 0 !important;
-    -webkit-transform: none;
-            transform: none;
+    left: 50%;
+    -webkit-transform: translate(-50%, 2%);
+            transform: translate(-50%, 2%);
   }
 }
-#piskotki.zgoraj-desno {
-  width: 500px;
+#piskotki-gdpr.piskotki-gdpr-zgoraj-desno {
+  width: 465px;
   top: 30px;
   right: 30px;
 }
-@media (max-width: 768px) {
-  #piskotki.zgoraj-desno {
-    width: 100%;
+@media (max-width: 525px) {
+  #piskotki-gdpr.piskotki-gdpr-zgoraj-desno {
+    width: 98%;
     top: 0;
-    right: inherit;
+    right: 50%;
     bottom: inherit;
-    left: 0;
-    border-radius: 0 !important;
+    left: inherit;
+    -webkit-transform: translate(50%, 2%);
+            transform: translate(50%, 2%);
   }
 }
-#piskotki.desno {
-  width: 500px;
+#piskotki-gdpr.piskotki-gdpr-desno {
+  width: 465px;
   top: 50%;
   right: 30px;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
 }
-@media (max-width: 768px) {
-  #piskotki.desno {
-    width: 100%;
+@media (max-width: 525px) {
+  #piskotki-gdpr.piskotki-gdpr-desno {
+    width: 98%;
     top: inherit;
-    right: inherit;
+    right: 50%;
     bottom: 0;
-    left: 0;
-    border-radius: 0 !important;
-    -webkit-transform: none;
-            transform: none;
+    left: inherit;
+    -webkit-transform: translate(50%, -2%);
+            transform: translate(50%, -2%);
   }
 }
-#piskotki.spodaj-desno {
-  width: 500px;
+#piskotki-gdpr.piskotki-gdpr-spodaj-desno {
+  width: 465px;
   bottom: 30px;
   right: 30px;
 }
-@media (max-width: 768px) {
-  #piskotki.spodaj-desno {
-    width: 100%;
-    right: inherit;
+@media (max-width: 525px) {
+  #piskotki-gdpr.piskotki-gdpr-spodaj-desno {
+    width: 98%;
+    top: inherit;
+    right: 50%;
     bottom: 0;
-    left: 0;
-    border-radius: 0 !important;
+    left: inherit;
+    -webkit-transform: translate(50%, -2%);
+            transform: translate(50%, -2%);
   }
 }
-#piskotki.spodaj {
-  width: 600px;
+#piskotki-gdpr.piskotki-gdpr-spodaj {
+  width: 465px;
   bottom: 5px;
   right: 50%;
   -webkit-transform: translateX(50%);
           transform: translateX(50%);
 }
-@media (max-width: 768px) {
-  #piskotki.spodaj {
-    width: 100%;
-    right: inherit;
+@media (max-width: 525px) {
+  #piskotki-gdpr.piskotki-gdpr-spodaj {
+    width: 98%;
+    top: inherit;
+    right: 50%;
     bottom: 0;
-    left: 0;
-    border-radius: 0 !important;
-    -webkit-transform: none;
-            transform: none;
+    left: inherit;
+    -webkit-transform: translate(50%, -2%);
+            transform: translate(50%, -2%);
   }
 }
-#piskotki.spodaj-levo {
-  width: 500px;
+#piskotki-gdpr.piskotki-gdpr-spodaj-levo {
+  width: 465px;
   bottom: 30px;
   left: 30px;
 }
-@media (max-width: 768px) {
-  #piskotki.spodaj-levo {
-    width: 100%;
-    left: 0;
+@media (max-width: 525px) {
+  #piskotki-gdpr.piskotki-gdpr-spodaj-levo {
+    width: 98%;
+    top: inherit;
+    right: inherit;
     bottom: 0;
-    border-radius: 0 !important;
+    left: 50%;
+    -webkit-transform: translate(-50%, -2%);
+            transform: translate(-50%, -2%);
   }
 }
-#piskotki.levo {
-  width: 500px;
+#piskotki-gdpr.piskotki-gdpr-levo {
+  width: 465px;
   top: 50%;
   left: 30px;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
 }
-@media (max-width: 768px) {
-  #piskotki.levo {
-    width: 100%;
+@media (max-width: 525px) {
+  #piskotki-gdpr.piskotki-gdpr-levo {
+    width: 98%;
     top: inherit;
     left: inherit;
     bottom: 0;
-    left: 0;
-    border-radius: 0 !important;
-    -webkit-transform: none;
-            transform: none;
+    left: 50%;
+    -webkit-transform: translate(-50%, -3%);
+            transform: translate(-50%, -3%);
   }
 }
-#piskotki.center {
-  width: 600px;
+#piskotki-gdpr.piskotki-gdpr-center {
+  width: 465px;
   top: 50%;
   right: 50%;
   -webkit-transform: translate(50%, -50%);
           transform: translate(50%, -50%);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
-@media (max-width: 768px) {
-  #piskotki.center {
-    width: 85%;
+@media (max-width: 525px) {
+  #piskotki-gdpr.piskotki-gdpr-center {
+    width: 98%;
   }
 }
-#piskotki p {
+#piskotki-gdpr p {
   font-weight: 400;
-  line-height: 25px;
-  margin: 14px 0;
+  line-height: 1.6em;
+  margin: 0;
+  padding: 0;
+  outline: 0;
   text-align: left;
+  color: inherit;
+  font-family: inherit;
+  font-size: 1.18em;
+  vertical-align: baseline;
+  letter-spacing: inherit;
 }
-#piskotki p strong {
+#piskotki-gdpr p strong {
   font-weight: bolder;
   font-size: 1.18em;
 }
-#piskotki a {
+#piskotki-gdpr a {
   text-decoration: underline;
+  font-weight: 400;
+  line-height: 25px;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  text-align: left;
+  color: inherit;
+  font-family: inherit;
+  font-size: 1.18em;
+  vertical-align: baseline;
+  letter-spacing: inherit;
 }
-#piskotki .btn {
-  padding: 11px 21px;
+#piskotki-gdpr .piskotki-gdpr-title {
+  margin-top: 10px;
+}
+#piskotki-gdpr .piskotki-gdpr-title span {
+  font-weight: bolder;
+}
+#piskotki-gdpr .piskotki-gdpr-main-text {
+  margin-top: 10px;
+}
+#piskotki-gdpr .piskotki-gdpr-input {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+#piskotki-gdpr .piskotki-gdpr-input input {
+  vertical-align: middle;
+  cursor: pointer;
+}
+#piskotki-gdpr .piskotki-gdpr-input input:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+#piskotki-gdpr .piskotki-gdpr-input label {
+  font-size: 12px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+#piskotki-gdpr .piskotki-gdpr-input input[type=checkbox]:disabled + label {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+#piskotki-gdpr .piskotki-gdpr-center {
+  margin: 15px auto;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+@media (max-width: 374px) {
+  #piskotki-gdpr .piskotki-gdpr-center {
+    margin: 10px auto;
+  }
+}
+#piskotki-gdpr .piskotki-gdpr-btn {
+  padding: 8px 28px;
   display: inline-block;
   text-align: center;
   font-weight: bolder;
-  margin: 10px auto 0;
+  margin: 0 15px 0;
   text-decoration: none !important;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
-  width: 150px;
   border: 2px solid rgba(0, 0, 0, 0.1);
-  text-transform: uppercase;
+  line-height: 25px;
+  outline: 0;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  vertical-align: baseline;
+  letter-spacing: inherit;
 }
-#piskotki .btn:hover {
+#piskotki-gdpr .piskotki-gdpr-btn:hover {
   -webkit-transform: scale(0.95);
           transform: scale(0.95);
   border: 2px solid rgba(0, 0, 0, 0.2);
 }
-#piskotki .cancel {
+@media (max-width: 768px) {
+  #piskotki-gdpr .piskotki-gdpr-btn {
+    margin: 0 10px 0;
+    padding: 8px 26px;
+  }
+}
+@media (max-width: 525px) {
+  #piskotki-gdpr .piskotki-gdpr-btn {
+    margin: 0 5px;
+    padding: 6px 22px;
+  }
+}
+@media (max-width: 374px) {
+  #piskotki-gdpr .piskotki-gdpr-btn {
+    display: block;
+    margin: 10px 0;
+  }
+}
+#piskotki-gdpr .piskotki-gdpr-btn-sec {
   display: inline-block;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  border: 2px solid;
   text-align: center;
-  line-height: 30px;
   text-decoration: none;
-  margin-left: 10px;
   opacity: 0.5;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
+  outline: 0;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  vertical-align: baseline;
+  letter-spacing: inherit;
+  border: 1px dotted;
+  border-radius: 100px;
+  padding: 12px 14px;
+  line-height: 0px;
+  min-width: 71px;
 }
-#piskotki .cancel:hover {
+#piskotki-gdpr .piskotki-gdpr-btn-sec:hover {
   opacity: 1;
-  cursor: pointer;
   -webkit-transform: scale(0.95);
           transform: scale(0.95);
 }
-#piskotki .cancel svg {
-  width: 15px;
-  height: 15px;
+@media (max-width: 768px) {
+  #piskotki-gdpr .piskotki-gdpr-btn-sec {
+    padding: 12px 12px;
+  }
 }
-#piskotki .icon {
+@media (max-width: 374px) {
+  #piskotki-gdpr .piskotki-gdpr-btn-sec {
+    display: block;
+    margin-top: 10px;
+    padding: 16px 22px;
+  }
+}
+#piskotki-gdpr .piskotki-gdpr-icon {
   background: rgba(0, 0, 0, 0.1);
   border-radius: 100%;
   padding: 6px;
@@ -259,10 +402,9 @@
   height: 30px;
   margin-right: 10px;
   position: relative;
-  -webkit-animation: pulse-dot 2.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) -0.4s infinite;
-          animation: pulse-dot 2.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) -0.4s infinite;
+  will-change: transform;
 }
-#piskotki .icon:before {
+#piskotki-gdpr .piskotki-gdpr-icon:before {
   content: "";
   position: absolute;
   display: block;
@@ -274,12 +416,42 @@
   left: -200%;
   border-radius: 100%;
   background-color: rgba(255, 255, 255, 0.1);
-  -webkit-animation: pulse-ring 2.5s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
-          animation: pulse-ring 2.5s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+  will-change: transform;
+  -webkit-animation: piskotki-gdpr-pulse-ring 2.5s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+          animation: piskotki-gdpr-pulse-ring 2.5s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
   pointer-events: none;
 }
+#piskotki-gdpr .piskotki-gdpr-flex {
+  margin-top: 10px !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+#piskotki-gdpr .piskotki-gdpr-flex .piskotki-gdpr-flex-inside {
+  border: 1px dotted;
+  padding: 8px 8px 4px;
+  margin-top: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+#piskotki-gdpr .piskotki-gdpr-flex .piskotki-gdpr-flex-inside p {
+  width: 85% !important;
+  font-weight: bolder !important;
+}
+#piskotki-gdpr .piskotki-gdpr-flex .piskotki-gdpr-flex-inside .right {
+  width: 15%;
+  text-align: right;
+}
+#piskotki-gdpr .piskotki-gdpr-flex .piskotki-gdpr-flex-inside .right label {
+  margin: 0 !important;
+}
 
-@-webkit-keyframes pulse-ring {
+@-webkit-keyframes piskotki-gdpr-pulse-ring {
   0% {
     -webkit-transform: scale(0.33);
             transform: scale(0.33);
@@ -289,7 +461,7 @@
   }
 }
 
-@keyframes pulse-ring {
+@keyframes piskotki-gdpr-pulse-ring {
   0% {
     -webkit-transform: scale(0.33);
             transform: scale(0.33);
@@ -298,7 +470,7 @@
     opacity: 0;
   }
 }
-@-webkit-keyframes pulse-dot {
+@-webkit-keyframes piskotki-gdpr-pulse-dot {
   0% {
     -webkit-transform: scale(0.9);
             transform: scale(0.9);
@@ -312,7 +484,7 @@
             transform: scale(0.9);
   }
 }
-@keyframes pulse-dot {
+@keyframes piskotki-gdpr-pulse-dot {
   0% {
     -webkit-transform: scale(0.9);
             transform: scale(0.9);
@@ -329,12 +501,12 @@
 /**
   * Animacija okna (bounce)
   */
-.bounce {
-  -webkit-animation: bounce 4s infinite;
-          animation: bounce 4s infinite;
+.piskotki-gdpr-bounce {
+  -webkit-animation: piskotki-gdpr-bounce 4s infinite;
+          animation: piskotki-gdpr-bounce 4s infinite;
 }
 
-@-webkit-keyframes bounce {
+@-webkit-keyframes piskotki-gdpr-bounce {
   from {
     -webkit-transform: scale3d(1, 1, 1);
             transform: scale3d(1, 1, 1);
@@ -349,7 +521,7 @@
   }
 }
 
-@keyframes bounce {
+@keyframes piskotki-gdpr-bounce {
   from {
     -webkit-transform: scale3d(1, 1, 1);
             transform: scale3d(1, 1, 1);
@@ -363,15 +535,71 @@
             transform: scale3d(1, 1, 1);
   }
 }
+.piskotki-gdpr-form-container {
+  /**
+    * Slider on/off style
+    */
+}
+.piskotki-gdpr-form-container .piskotki-gdpr-switch {
+  display: inline-block;
+  height: 22px;
+  position: relative;
+  width: 33px;
+}
+.piskotki-gdpr-form-container .piskotki-gdpr-switch input {
+  display: none;
+}
+.piskotki-gdpr-form-container .piskotki-gdpr-slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.piskotki-gdpr-form-container .piskotki-gdpr-slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: "";
+  height: 14px;
+  left: 4px;
+  position: absolute;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  width: 14px;
+}
+.piskotki-gdpr-form-container input:checked + .piskotki-gdpr-slider {
+  background-color: #66bb6a;
+}
+.piskotki-gdpr-form-container input:checked + .piskotki-gdpr-slider:before {
+  -webkit-transform: translateX(11px);
+          transform: translateX(11px);
+}
+.piskotki-gdpr-form-container .piskotki-gdpr-slider.piskotki-gdpr-round {
+  border-radius: 32px;
+}
+.piskotki-gdpr-form-container .piskotki-gdpr-slider.piskotki-gdpr-round:before {
+  border-radius: 50%;
+}
+.piskotki-gdpr-form-container .piskotki-gdpr-slider.piskotki-gdpr-disabled {
+  opacity: 0.8;
+  -webkit-filter: grayscale(0.2);
+          filter: grayscale(0.2);
+  cursor: not-allowed;
+}
+
 /**
   * Odzivno oblikovanje - tabele
   */
-.piskotki {
+.piskotki-gdpr {
   /**
     * Nastavitev piškotkov - checkbox (na telefonih in tablicah)
     */
 }
-.piskotki table {
+.piskotki-gdpr table {
   border-collapse: collapse !important;
   height: 100% !important;
   margin: 0 auto !important;
@@ -379,18 +607,18 @@
   width: 100% !important;
   word-break: normal !important;
 }
-.piskotki table th {
+.piskotki-gdpr table th {
   padding: 15px;
   border: 1px solid #ccc;
   background: #fff;
 }
-.piskotki table td {
+.piskotki-gdpr table td {
   border-width: 1px;
   padding: 15px;
   border: 1px solid #ccc;
 }
 @media (max-width: 768px) {
-  .piskotki input[type=checkbox] {
+  .piskotki-gdpr input[type=checkbox] {
     width: 15px;
     height: 15px;
     background: white;
